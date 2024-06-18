@@ -1,0 +1,131 @@
+html Copy code
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Periodic Table</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: fixed;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .element {
+        width: 50px;
+        height: 50px;
+      }
+      .element span {
+        display: block;
+      }
+      .number {
+        font-size: 0.8em;
+      }
+      .symbol {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+      .name {
+        font-size: 0.8em;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td class="element">
+          <span class="number">1</span><span class="symbol">H</span
+          ><span class="name">Hydrogen</span>
+        </td>
+        <td colspan="16"></td>
+        <td class="element">
+          <span class="number">2</span><span class="symbol">He</span
+          ><span class="name">Helium</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="element">
+          <span class="number">3</span><span class="symbol">Li</span
+          ><span class="name">Lithium</span>
+        </td>
+        <td class="element">
+          <span class="number">4</span><span class="symbol">Be</span
+          ><span class="name">Beryllium</span>
+        </td>
+        <td colspan="10"></td>
+        <td class="element">
+          <span class="number">5</span><span class="symbol">B</span
+          ><span class="name">Boron</span>
+        </td>
+        <td class="element">
+          <span class="number">6</span><span class="symbol">C</span
+          ><span class="name">Carbon</span>
+        </td>
+        <td class="element">
+          <span class="number">7</span><span class="symbol">N</span
+          ><span class="name">Nitrogen</span>
+        </td>
+        <td class="element">
+          <span class="number">8</span><span class="symbol">O</span
+          ><span class="name">Oxygen</span>
+        </td>
+        <td class="element">
+          <span class="number">9</span ><span class="symbol">F</span
+          ><span class="name">Fluorine</span>
+        </td>
+        <td class="element">
+          <span class="number">10</span><span class="symbol">Ne</span
+          ><span class="name">Neon</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="element">
+          <span class="number">11</span><span class="symbol">Na</span
+          ><span class="name">Sodium</span>
+        </td>
+        <td class="element">
+          <span class="number">12</span><span class="symbol">Mg</span
+          ><span class="name">Magnesium</span>
+        </td>
+        <td colspan="10"></td>
+        <td class="element">
+          <span class="number">13</span><span class="symbol">Al</span
+          ><span class="name">Aluminium</span>
+        </td>
+        <td class="element">
+          <span class="number">14</span><span class="symbol">Si</span
+          ><span class="name">Silicon</span>
+        </td>
+        <td class="element">
+          <span class="number">15</span><span class="symbol">P</span
+          ><span class="name">Phosphorus</span>
+        </td>
+        <td class="element">
+          <span class="number">16</span><span class="symbol">S</span
+          ><span class="name">Sulfur</span>
+        </td>
+        <td class="element">
+          <span class="number">17</span><span class="symbol">Cl</span
+          ><span class="name">Chlorine</span>
+        </td>
+        <td class="element">
+          <span class="number">18</span><span class="symbol">Ar</span
+          ><span class="name">Argon</span>
+        </td>
+      </tr>
+      <!-- Additional rows for more elements can be added in a similar manner -->
+    </table>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #00704A;
+    padding: 10px 20px;
+    
+    color: white;
+}
+
+.logo img {
+    height: 50px;
+}
+
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 21px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+.nav-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #00704A;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-active li {
+    margin: 10px 0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="left">
+            <div class="logo">
+                <img src="logo.png" alt="logo" />
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Logout</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Account</a></li>
+                </ul>
+            </nav>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </header>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /** https://m.media-amazon.com/images/G/31/gno/sprites…-sprite-global-1x-reorg-privacy._CB600086755_.png***/
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: rgb(19, 25, 33);
+        height: 60px;
+        color: white;
+      }
+      .container {
+        width: 99%;
+        height: 100%;
+        margin: auto;
+      }
+      .header-container {
+        display: flex;
+        align-items: center;
+      }
+      .logo-container {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        font-size: 1.1rem;
+      }
+      .logo {
+        background: url('https://m.media-amazon.com/images/G/31/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936311_.png');
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <div class="logo-container">
+          <div class="logo"></div>
+          <span class="dotin">.in</span>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
