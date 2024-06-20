@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header Example</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        background-color: white;
+        border-bottom: 2px solid blue;
+        padding: 10px 0;
+      }
+
+      .header-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .logo {
+        float: left;
+      }
+
+      .logo img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        vertical-align: middle;
+      }
+
+      .logo span {
+        font-weight: bold;
+        vertical-align: middle;
+        margin-left: 10px;
+      }
+
+      .nav-links {
+        float: right;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: black;
+        margin-left: 20px;
+        font-weight: bold;
+      }
+
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img
+            src="https://dopefolio.netlify.app/assets/png/john-doe.png"
+            alt="Profile Picture"
+          />
+          <span>JOHN DOE</span>
+        </div>
+        <nav class="nav-links">
+          <a href="#">HOME</a>
+          <a href="#">ABOUT</a>
+          <a href="#">PROJECTS</a>
+          <a href="#">CONTACT</a>
+        </nav>
+      </div>
+    </header>
+  </body>
+</html>
