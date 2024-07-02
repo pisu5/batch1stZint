@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Responsive Design</title>
+    <style>
+      /* Basic styles */
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        background-color: #333;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        position: relative;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2em;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .hamburger {
+        display: none;
+        cursor: pointer;
+      }
+
+      .hamburger .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: white;
+      }
+
+      main {
+        padding: 20px 0;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      .grid-item {
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      /* Media query for devices with a max width of 768px */
+      @media (max-width: 768px) {
+        .grid-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* Media query for devices with a max width of 480px */
+      @media (max-width: 480px) {
+        header {
+          text-align: left;
+          padding: 10px 20px;
+        }
+
+        header h1 {
+          font-size: 1.5em;
+        }
+
+        .nav-links {
+          display: none;
+          flex-direction: column;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .hamburger {
+          display: block;
+          position: absolute;
+          top: 20px;
+          right: 20px;
+        }
+
+        .grid-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Modern Site</h1>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="grid-container">
+        <section class="grid-item">
+          <h2>Welcome</h2>
+          <p>This is a modern responsive design example.</p>
+        </section>
+        <section class="grid-item">
+          <h2>About Us</h2>
+          <p>Learn more about our services and offerings.</p>
+        </section>
+        <section class="grid-item">
+          <h2>Services</h2>
+          <p>Discover what we can do for you.</p>
+        </section>
+        <section class="grid-item">
+          <h2>Contact</h2>
+          <p>Get in touch with us.</p>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 Modern Site</p>
+    </footer>
+    <script>document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+      
+        hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+        });
+      });
+      </script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media-Query</title>
+    <style>
+      header {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        background-color: rgb(255, 247, 247);
+        color: rgb(205, 27, 27);
+      }
+      .logo {
+        height: fit-content;
+
+        font-size: 40px;
+        padding: 4px;
+      }
+
+      nav {
+        font-size: larger;
+        position: relative;
+        left: 50%;
+        text-align: right;
+      }
+      nav ul {
+        text-align: right;
+        list-style: none;
+      }
+      nav ul li {
+        padding: 7px;
+        display: inline-block;
+      }
+      li a {
+        color: black;
+        text-decoration: none;
+      }
+      .hamburger {
+        position: absolute;
+        display: none;
+        width: 50px;
+        height: 80px;
+        flex-direction: column;
+      }
+
+      @media only screen and (max-width: 760px) {
+        header {
+          background-color: aqua;
+        }
+        nav {
+          display: none;
+        }
+        .hamburger {
+          left: 80%;
+          display: block;
+        }
+        img {
+          height: 40px;
+          width: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Modern Website</div>
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">About us</a></li>
+          <li><a href="">Profile</a></li>
+          <li><a href="">Bye Bye</a></li>
+          <li><a href="">Account</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8woy04mK0l27SupoEKKsOnv4MIGY5r53dOw&s"
+          alt=""
+        />
+      </div>
+    </header>
+  </body>
+</html>
