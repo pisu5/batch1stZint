@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      header {
+        background-color: aliceblue;
+        display: flex;
+        width: 100%;
+        height: fit-content;
+      }
+      .logo {
+        text-align: center;
+        margin: 8px;
+      }
+      .ham {
+        display: none;
+      }
+      img {
+        height: 40px;
+        width: 40px;
+        vertical-align: middle;
+      }
+      nav {
+        position: relative;
+        left: 70%;
+        margin-left: 20px;
+        text-align: right;
+      }
+      ul {
+        list-style: none;
+      }
+      ul li {
+        text-decoration: none;
+        display: inline-block;
+        padding: 4px;
+        color: black;
+      }
+      .parent {
+        display: none;
+      }
+      @media only screen and (max-width: 760px) {
+        nav {
+          display: none;
+        }
+        .ham {
+          display: block;
+        }
+        img {
+          display: block;
+        }
+        .parent {
+            display: block;
+          height: 800px;
+          width: 100%;
+        }
+        .child {
+          height: 100px;
+          width: 300px;
+          background-color: blueviolet;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Burger King</div>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Profile</li>
+          <li>Logout</li>
+        </ul>
+      </nav>
+      <div class="ham">
+        <img src="./hamburger.png" alt="" />
+      </div>
+    </header>
+    <div class="parent">
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+  </body>
+</html>
