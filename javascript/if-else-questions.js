@@ -94,7 +94,7 @@ if(a===b && b===c){
 }else{
     console.log("Scelene trinagle")
 }
-    */
+    
 
 //QUE 8TH
 
@@ -115,3 +115,17 @@ if (ram < shyam) {
 } else {
   console.log("Ajay is young");
 }
+  
+
+  
+ //QUE 14 
+ const letter = '&';
+ if(letter>='A' && letter<='Z' || letter>='a'  && letter<='z'){
+  console.log("Letter is alpha");
+
+ }else{
+  console.log("Letter is invalid");
+ }
+  */
+
+
