@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: antiquewhite;
+      }
+      .board {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        margin-right: auto;
+        margin-left: 20%;
+      }
+      .cell {
+        border-bottom: 5px solid black;
+        border-right: 5px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 90px;
+        font-weight: 900;
+        line-height: 95px;
+        padding: 20px;
+        text-align: center;
+        user-select: none;
+        cursor: pointer;
+      }
+      .cell.cell:nth-child(3n) {
+        border-right: none;
+      }
+      .cell:nth-child(n + 7) {
+        border-bottom: none;
+      }
+      .control {
+        width: 50%;
+        margin-right: auto;
+        margin-left: 20%;
+      }
+      button {
+        height: 90px;
+        width: 90px;
+        color: white;
+        background-color: darkcyan;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="board">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="control">
+        <h1 class="gs">Game Statement:</h1>
+        <button>Start</button>
+      </div>
+      <div class="control">
+        <h1 id="totalScore">Total Score:</h1>
+        <p id="xScore">X Score :</p>
+        <p id="OScore">O Score :</p>
+      </div>
+    </div>
+    <script>
+      let btn = document.querySelector("button");
+      let cells = document.querySelectorAll(".cell");
+      let board = document.querySelector(".board");
+      let gs = document.querySelector(".gs");
+      let turn = "X";
+      let gamePlay = false;
+      let count = 0;
+      let xwins = 0;
+      let ywins = 0;
+      btn.addEventListener("click", function () {
+        if (gamePlay) {
+          turn = "X";
+          celarAll();
+          gamePlay = false;
+          btn.innerHTML = "Start";
+        } else {
+          count = 0;
+          btn.innerHTML = "Press To Restart";
+          btn.style.backgroundColor = "red";
+          gs.innerHTML = "X 'turn";
+        }
+      });
+      board.addEventListener("click", function (event) {
+        let col = event.target;
+        if (gamePlay && col == "") {
+          col.innerHTML = turn;
+          count++;
+          if(turn=='X'){
+            col.style.color = "red";
+            turn = 'O'
+
+          }else{
+            col.style.color = "blue";
+            turn = "X";
+          }
+          gs.innerHTML = turn + "turn";
+        }
+      });
+      function celarAll() {
+        for (let i = 0; i < cells.length; i++) {
+          cells[i].innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>
