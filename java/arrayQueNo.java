@@ -20,28 +20,48 @@ public class arrayQueNo {
          * }
          * System.out.println(arr[i]);
          * }
+         * 
+         * // que 9th 2nd app
+         * int[] original = { 3, 4, 5, 6, 7, 8, 9, 1, 4, 47, 8 };
+         * int[] sorted = new int[original.length];
+         * for (int i = 0; i < original.length; i++) {
+         * int smallestEle = original[0];
+         * int smallestIndex = 0;
+         * for (int j = 1; j < original.length; j++) {
+         * if (original[j] < smallestEle) {
+         * smallestEle = original[j];
+         * smallestIndex = j;
+         * }
+         * 
+         * }
+         * sorted[i] = smallestEle;
+         * original[smallestIndex] = Integer.MAX_VALUE;
+         * 
+         * }
+         * for (int z = 0; z < sorted.length; z++) {
+         * System.out.println("Sorted value" + " " + sorted[z]);
+         * 
+         * }
          */
-        // que 9th 2nd app
-        int[] original = { 3, 4, 5, 6, 7, 8, 9, 1, 4, 47, 8 };
-        int[] sorted = new int[original.length];
-        for (int i = 0; i < original.length; i++) {
-            int smallestEle = original[0];
-            int smallestIndex = 0;
-            for (int j = 1; j < original.length; j++) {
-                if (original[j] < smallestEle) {
-                    smallestEle = original[j];
-                    smallestIndex = j;
-                }
+        int[] arr = { 1, 2, 34, 34, 8, 35, 34 };
+        boolean falg = true;
+        int tar = 34;
+        int lastoccur = -1;
+        int firstOccur = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == tar && falg == true) {
+                firstOccur = i;
+                lastoccur = i;
+                falg = false;
+
+            } else if (arr[i] == tar) {
+                lastoccur = i;
 
             }
-            sorted[i] = smallestEle;
-            original[smallestIndex] = Integer.MAX_VALUE;
 
         }
-        for (int z = 0; z < sorted.length; z++) {
-            System.out.println("Sorted value" + " " +  sorted[z]);
-
-        }
+        System.out.println("First Occurance At index" + " " + firstOccur);
+        System.out.println("Last Occurance At index" + " " + lastoccur);
 
     }
 }

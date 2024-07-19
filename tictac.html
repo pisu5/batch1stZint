@@ -64,17 +64,17 @@
       <div class="cell"></div>
       <div class="control">
         <h1 class="gs">Game Statement:</h1>
-        <button>Start</button>
-      </div>
-      <div class="control">
-        <h1 id="totalScore">Total Score:</h1>
-        <p id="xScore">X Score :</p>
-        <p id="OScore">O Score :</p>
       </div>
     </div>
+    <div class="control">
+      <h1 id="totalScore">Total Score:</h1>
+      <p id="xScore">X Score :</p>
+      <p id="OScore">O Score :</p>
+    </div>
+    <button>Start</button>
     <script>
       let btn = document.querySelector("button");
-      let cells = document.querySelectorAll(".cell");
+      let cell = document.querySelectorAll(".cell");
       let board = document.querySelector(".board");
       let gs = document.querySelector(".gs");
       let turn = "X";
@@ -85,19 +85,21 @@
       btn.addEventListener("click", function () {
         if (gamePlay) {
           turn = "X";
-          celarAll();
+          clearAll();
           gamePlay = false;
           btn.innerHTML = "Start";
         } else {
+          gamePlay = true;
           count = 0;
           btn.innerHTML = "Press To Restart";
           btn.style.backgroundColor = "red";
           gs.innerHTML = "X 'turn";
         }
       });
+
       board.addEventListener("click", function (event) {
         let col = event.target;
-        if (gamePlay && col == "") {
+        if (gamePlay && col.innerHTML == "") {
           col.innerHTML = turn;
           count++;
           if (turn == "X") {
@@ -108,11 +110,81 @@
             turn = "X";
           }
           gs.innerHTML = turn + "turn";
+          let cw = checkWinner();
+          if (cw == 1) {
+            console.log("x winner");
+            gs.innerHTML = "Players x wins the game";
+          } else if (cw == 2) {
+            gs.innerHTML = "Player o wins the game";
+          } else if (count == 9) {
+            gs.innerHTML = "Game is tie";
+          }
+        } else {
+          alert("wrong click");
         }
       });
-      function celarAll() {
+      function clearAll() {
         for (let i = 0; i < cells.length; i++) {
           cells[i].innerHTML = "";
+        }
+      }
+      function checkWinner() {
+        if (
+          (cell[0].innerHTML == "x" &&
+            cell[1].innerHTML == "x" &&
+            cell[2].innerHTML == "x") ||
+          (cell[3].innerHTML == "x" &&
+            cell[4].innerHTML == "x" &&
+            cell[5].innerHTML == "x") ||
+          (cell[6].innerHTML == "x" &&
+            cell[7].innerHTML == "x" &&
+            cell[8].innerHTML == "x") ||
+          (cell[0].innerHTML == "x" &&
+            cell[3].innerHTML == "x" &&
+            cell[6].innerHTML == "x") ||
+          (cell[1].innerHTML == "x" &&
+            cell[4].innerHTML == "x" &&
+            cell[7].innerHTML == "x") ||
+          (cell[2].innerHTML == "x" &&
+            cell[5].innerHTML == "x" &&
+            cell[8].innerHTML == "x") ||
+          (cell[0].innerHTML == "x" &&
+            cell[4].innerHTML == "x" &&
+            cell[8].innerHTML == "x") ||
+          (cell[2].innerHTML == "x" &&
+            cell[4].innerHTML == "x" &&
+            cell[6].innerHTML == "x")
+        ) {
+          return 1;
+        } else if (
+          (cell[0].innerHTML == "y" &&
+            cell[1].innerHTML == "y" &&
+            cell[2].innerHTML == "y") ||
+          (cell[3].innerHTML == "y" &&
+            cell[4].innerHTML == "y" &&
+            cell[5].innerHTML == "y") ||
+          (cell[6].innerHTML == "y" &&
+            cell[7].innerHTML == "y" &&
+            cell[8].innerHTML == "y") ||
+          (cell[0].innerHTML == "y" &&
+            cell[3].innerHTML == "y" &&
+            cell[6].innerHTML == "y") ||
+          (cell[1].innerHTML == "y" &&
+            cell[4].innerHTML == "y" &&
+            cell[7].innerHTML == "y") ||
+          (cell[2].innerHTML == "y" &&
+            cell[5].innerHTML == "y" &&
+            cell[8].innerHTML == "y") ||
+          (cell[0].innerHTML == "y" &&
+            cell[4].innerHTML == "y" &&
+            cell[8].innerHTML == "y") ||
+          (cell[2].innerHTML == "y" &&
+            cell[4].innerHTML == "y" &&
+            cell[6].innerHTML == "y")
+        ) {
+          return 2;
+        } else {
+          return 0;
         }
       }
     </script>
