@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .logo {
+        display: inline-block;
+        margin: 10px;
+        padding: 12px;
+        vertical-align: middle;
+      }
+      nav {
+        float: right;
+      }
+      ul {
+        list-style: none;
+      }
+      ul li {
+        display: inline-block;
+        padding: 12px;
+        margin: 10px;
+      }
+      .hero {
+        width: 100%;
+        height: 100%;
+        background-color: dodgerblue;
+        border: 8px solid rgb(255, 18, 18);
+      }
+      .child {
+        display: inline-block;
+        margin: 8px;
+        padding: 12px;
+        height: 100px;
+        width: 100px;
+        border: 4px solid rgb(32, 2, 2);
+        background-color: rgb(21, 255, 0);
+      }
+      form {
+        margin-left: 27%;
+      }
+      .form {
+        text-align: center;
+        margin-left: 30%;
+        text-align: center;
+      }
+      input {
+        border-radius: 20px;
+        margin-left: 150px;
+
+        display: block;
+        padding: 12px;
+        margin: 10px;
+        width: 80%;
+        color: whitesmoke;
+        height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--<h1>This is heading</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+      maiores, perspiciatis nisi officia corrupti odio obcaecati a consequatur
+      nobis harum iusto repellendus soluta asperiores molestiae minima vel ipsum
+      sequi? Nesciunt, cupiditate aliquam. Nihil veritatis, magni natus eveniet
+      sunt dolore suscipit. Molestiae debitis quisquam nulla reprehenderit fuga
+      exercitationem optio itaque iure aliquid odio eaque, ea provident, et
+      saepe cum voluptates? Provident voluptatem ullam accusantium odio optio
+      molestias, vero omnis quos itaque blanditiis, sapiente, quo soluta ipsam
+      architecto! Voluptatibus aliquid dolor nulla nostrum quo minus sed
+      consequuntur error modi sint quis, delectus quasi veritatis hic eum
+      suscipit rerum atque aliquam optio asperiores?
+    </p>
+    <ol type="A" start="26" reversed>
+      <li>Item1</li>
+      <li>Item1</li>
+      <li>Item1</li>
+      <li>Item1</li>
+    </ol>
+    <ul>
+      <li>Item1</li>
+      <li>Item1</li>
+      <li>Item1</li>
+      <li>Item1</li>
+    </ul>
+    <table border="">
+      <tr>
+        <th>Name</th>
+        <th>Subject</th>
+        <th>Teacher</th>
+        <th>Topics</th>
+      </tr>
+      <tr>
+        <td>Nitin</td>
+        <td>math</td>
+        <td>Uttam sir</td>
+        <td>Integer</td>
+      </tr>
+      <tr>
+        <td>Ajay</td>
+        <td>English</td>
+        <td>Ram sir</td>
+        <td>Vocab</td>
+      </tr>
+      <tr>
+        <td>Shyam</td>
+        <td>Sanskrit</td>
+        <td>Ramesh sir</td>
+        <td>Ishliok</td>
+      </tr>
+    </table>
+    <table border="">
+      <tr>
+        <th colspan="5">IT PROJECTS</th>
+      </tr>
+      <tr>
+        <td>Module</td>
+        <td>Module</td>
+        <td>Module</td>
+        <td>Module</td>
+        <td>Module</td>
+      </tr>
+      <tr>
+        <th rowspan="5">DevOops</th>
+        <td>Ecommerce</td>
+        <td>Ecommerce</td>
+        <td>Ecommerce</td>
+        <td>Ecommerce</td>
+      </tr>
+      <tr>
+        <td>Learning</td>
+        <td>Learning</td>
+        <td>Learning</td>
+        <td>Learning</td>
+      </tr>
+      <tr>
+        <td>Learning</td>
+        <td>Learning</td>
+        <td>Learning</td>
+
+        <td>Learning</td>
+      </tr>
+      <tr>
+        <td>Learning</td>
+        <td>Learning</td>
+        <td>Learning</td>
+
+        <td>Learning</td>
+      </tr>
+      <tr>
+        <td>Learning</td>
+        <td>Learning</td>
+        <td>Learning</td>
+
+        <td>Learning</td>
+      </tr>
+    </table>-->
+    <!--Semantic Element-->
+    <header>
+      <div class="logo"><img src="" alt="" />Logo</div>
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li>About</li>
+          <li>Logout</li>
+          <li>Add Story</li>
+          <li>Setting</li>
+        </ul>
+      </nav>
+    </header>
+    <!--Hero section-->
+    <section>
+      <div class="hero">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="dropDown">
+          <select style="width: 200px; background-color: darkcyan">
+            <option value="">India</option>
+            <option value="">pak</option>
+            <option value="">Usa</option>
+            <option value="">Nz</option>
+          </select>
+        </div>
+        <div
+          class="form"
+          style="height: 600px; width: 40%; background-color: teal"
+          class="form"
+        >
+          <form>
+            <input type="text" placeholder="Enter Name" /><input
+              type="text"
+              placeholder="Enter Mobile"
+            /><input type="text" placeholder="Enter Email" />
+            <button>Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer style="background-color: darkslategrey">
+      <h1>My Web</h1>
+      <p><span>Copy Right 2024</span></p>
+    </footer>
+  </body>
+</html>
