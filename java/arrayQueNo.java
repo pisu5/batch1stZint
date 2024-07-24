@@ -85,7 +85,7 @@ public class arrayQueNo {
          * }
          * System.out.println(freQuency);
          */
-        int[] arr = { 2, 3, 4 };
+      //  int[] arr = { 2, 3, 4 };
         /*
          * int max = Integer.MIN_VALUE;
          * int smax = Integer.MIN_VALUE;
@@ -114,7 +114,7 @@ public class arrayQueNo {
          * }else{
          * System.out.println("Array is not sort");
          * }
-         */
+         
         int[] arr1 = { 1, 2, 3, 4, 5, 6, 7, 8 };
         int[] arr2 = { -1, 1, 1, 9, 10, 11, 12, 13, 14, 15, 16 };
         int[] res = new int[arr1.length + arr2.length];
@@ -136,5 +136,30 @@ public class arrayQueNo {
             }
         }
         System.out.println(Arrays.toString(res));
+        */
+        //que no 32
+        int [] arr = {123,234};
+        int [] arr2 = {1,233};
+        int sum = 0;
+        for(int i =0;i<arr.length;i++){
+            int temp = arr[i];
+            while(temp>0){
+                int ld = temp%10;
+                sum+=ld;
+                temp/=10;
+
+            }
+        }
+        for(int i =0;i<arr2.length;i++){
+            int temp = arr2[i];
+            while(temp>0){
+                int ld = temp%10;
+                sum+=ld;
+                temp/=10;
+
+            }
+        }
+        System.out.println(sum);
+
     }
 }

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zomato</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        display: flex;
+        width: 100%;
+      }
+      .bg {
+        width: 100%;
+        height: fit-content;
+      }
+      .bg img {
+        height: 600px;
+        width: 100%;
+      }
+      .left {
+        left: 25%;
+        color: white;
+        position: absolute;
+        top: 0;
+        padding: 12px;
+        margin: 8px;
+      }
+
+      .right {
+        left: 60%;
+
+        position: absolute;
+        top: 0;
+      }
+      .right ul {
+        list-style: none;
+      }
+      .right ul li {
+        font-family: Okra, Helvetica, sans-serif;
+        padding: 12px;
+        margin: 8px;
+        display: inline-block;
+        color: aliceblue;
+        font-weight: 400;
+      }
+      .logo {
+        position: relative;
+        left: 15%;
+      }
+
+      .logo img {
+        height: 60px;
+      }
+      .headerCont {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        position: absolute;
+        left: 30%;
+
+        top: 20%;
+      }
+      .text {
+        width: 100%;
+        position: relative;
+        top: 100px;
+        right: 300px;
+      }
+      .text h3 {
+        font-family: Okra, Helvetica, sans-serif;
+        width: 100%;
+        font-size: xx-large;
+        color: white;
+      }
+      .searchbar {
+        
+        border-radius: 12px;
+        border-top-left-radius: 12px;
+        width: 50%;
+        position: absolute;
+        top: 0;
+        height: 50px;
+        margin-top:20% ;
+        left: 25%;
+
+        border: 1px solid black;
+        background-color: white;
+      }
+      .location {
+        color: white;
+        background-color: white;
+        width: 30%;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="bg">
+        <img
+          src="https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png"
+          alt=""
+        />
+      </div>
+
+      <div class="left"><span>Get the app</span></div>
+      <div class="right">
+        <ul>
+          <li>Investor Reletions</li>
+          <li>Add resturant</li>
+          <li>Login</li>
+          <li>Sign up</li>
+        </ul>
+      </div>
+    </header>
+    <div class="headerCont">
+      <div class="logo">
+        <img
+          src="https://b.zmtcdn.com/web_assets/8313a97515fcb0447d2d77c276532a511583262271.png"
+          class="high-res-image"
+          alt="logo"
+        />
+      </div>
+      <div class="text">
+        <h3>Discover the best food & drinks in Gwalior</h3>
+      </div>
+    </div>
+    <div class="searchbar">
+      <div class="location">Gwalior</div>
+      <div class="search"></div>
+    </div>
+  </body>
+</html>
