@@ -85,7 +85,7 @@ public class arrayQueNo {
          * }
          * System.out.println(freQuency);
          */
-      //  int[] arr = { 2, 3, 4 };
+        // int[] arr = { 2, 3, 4 };
         /*
          * int max = Integer.MIN_VALUE;
          * int smax = Integer.MIN_VALUE;
@@ -114,52 +114,72 @@ public class arrayQueNo {
          * }else{
          * System.out.println("Array is not sort");
          * }
-         
-        int[] arr1 = { 1, 2, 3, 4, 5, 6, 7, 8 };
-        int[] arr2 = { -1, 1, 1, 9, 10, 11, 12, 13, 14, 15, 16 };
-        int[] res = new int[arr1.length + arr2.length];
-        int p1 = 0;
-        int p2 = 0;
-        int p3 = 0;
-        while (p3 < res.length) {
-            int val1 = p1 < arr1.length ? arr1[p1] : Integer.MAX_VALUE; // ternary ope shorthand of true false
-
-            int val2 = p2 < arr2.length ? arr2[p2] : Integer.MAX_VALUE;
-            if (val1 < val2) {
-                res[p3] = val1;
-                p3++;
-                p1++;
-            } else {
-                res[p3] = val2;
-                p3++;
-                p2++;
-            }
+         * 
+         * int[] arr1 = { 1, 2, 3, 4, 5, 6, 7, 8 };
+         * int[] arr2 = { -1, 1, 1, 9, 10, 11, 12, 13, 14, 15, 16 };
+         * int[] res = new int[arr1.length + arr2.length];
+         * int p1 = 0;
+         * int p2 = 0;
+         * int p3 = 0;
+         * while (p3 < res.length) {
+         * int val1 = p1 < arr1.length ? arr1[p1] : Integer.MAX_VALUE; // ternary ope
+         * shorthand of true false
+         * 
+         * int val2 = p2 < arr2.length ? arr2[p2] : Integer.MAX_VALUE;
+         * if (val1 < val2) {
+         * res[p3] = val1;
+         * p3++;
+         * p1++;
+         * } else {
+         * res[p3] = val2;
+         * p3++;
+         * p2++;
+         * }
+         * }
+         * System.out.println(Arrays.toString(res));
+         * 
+         * //que no 32
+         * int [] arr = {123,234};
+         * int [] arr2 = {1,233};
+         * int sum = 0;
+         * for(int i =0;i<arr.length;i++){
+         * int temp = arr[i];
+         * while(temp>0){
+         * int ld = temp%10;
+         * sum+=ld;
+         * temp/=10;
+         * 
+         * }
+         * }
+         * for(int i =0;i<arr2.length;i++){
+         * int temp = arr2[i];
+         * while(temp>0){
+         * int ld = temp%10;
+         * sum+=ld;
+         * temp/=10;
+         * 
+         * }
+         * }
+         * System.out.println(sum);
+         */
+        //print array an barchartv form
+        int[] arr = { 7, 5, 4, 6, 8, 4, 3, 7 };
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            max = Math.max(max, arr[i]);
         }
-        System.out.println(Arrays.toString(res));
-        */
-        //que no 32
-        int [] arr = {123,234};
-        int [] arr2 = {1,233};
-        int sum = 0;
-        for(int i =0;i<arr.length;i++){
-            int temp = arr[i];
-            while(temp>0){
-                int ld = temp%10;
-                sum+=ld;
-                temp/=10;
+        for (int level = max; level >= 1; level--) {
+            for (int star = 0; star < arr.length; star++) {
+                if (level < arr[star]) {
+                    System.out.print("\t*");
+
+                }else{
+                    System.out.print("\t");
+                }
 
             }
-        }
-        for(int i =0;i<arr2.length;i++){
-            int temp = arr2[i];
-            while(temp>0){
-                int ld = temp%10;
-                sum+=ld;
-                temp/=10;
+            System.out.println();
 
-            }
         }
-        System.out.println(sum);
-
     }
 }
