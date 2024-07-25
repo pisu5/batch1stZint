@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+header {
+  width: 100%;
+}
+.background-image {
+  width: 100%;
+  height: 50%;
+}
+.background-image img {
+  width: 100%;
+  height: 500px;
+}
+.header {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+.logo {
+  margin-top: 10%;
+  margin-left: 40%;
+}
+.logo img {
+  margin-bottom: 20px;
+  width: 400px;
+}
+.nav {
+  position: absolute;
+  left: 60%;
+  top: 0;
+  color: white;
+}
+ul {
+  list-style-type: none;
+}
+ul li {
+  font-family: Okra, Helvetica, sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  padding: 12px;
+  margin: 8px;
+  font-size: medium;
+}
+.textArea {
+  color: white;
+  margin-left: 30%;
+}
+
+.search-bar-container {
+  left: 20px;
+  position: relative;
+  top: 40px;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  padding: 10px 20px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+.location-icon {
+  color: red;
+  margin-right: 10px;
+  font-size: 20px;
+}
+.gwalior-text {
+  font-size: 18px;
+  margin-right: 10px;
+  color: grey;
+}
+.dropdown-arrow {
+  margin-right: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.search-text {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  flex-grow: 1;
+}
+.searchbar {
+  color: brown;
+  height: 40px;
+  width: 40px;
+}
+/*food card start*/
+.foodcard {
+  display: flex;
+  justify-content: center;
+}
+.contentcard {
+background-color:transparent;
+
+ 
+  margin: 12px;
+ 
+}
+.contentcard .image img {
+  height: 200px;
+  width: 350px;
+
+  margin: 8px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.foo-content {
+  font-size: 20px;
+  font-family: Okra, Helvetica, sans-serif;
+  position: relative;
+  left: 10px;
+}
+.foo-content h4 {
+  font-weight: 200px;
+}
+.foo-content p {
+  font-weight: normal;
+}
