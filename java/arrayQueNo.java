@@ -161,25 +161,44 @@ public class arrayQueNo {
          * }
          * }
          * System.out.println(sum);
+         * 
+         * //print array an barchartv form
+         * int[] arr = { 7, 5, 4, 6, 8, 4, 3, 7 };
+         * int max = Integer.MIN_VALUE;
+         * for (int i = 0; i < arr.length; i++) {
+         * max = Math.max(max, arr[i]);
+         * }
+         * for (int level = max; level >= 1; level--) {
+         * for (int star = 0; star < arr.length; star++) {
+         * if (level < arr[star]) {
+         * System.out.print("\t*");
+         * 
+         * }else{
+         * System.out.print("\t");
+         * }
+         * 
+         * }
+         * System.out.println();
+         * 
+         * }
          */
-        //print array an barchartv form
-        int[] arr = { 7, 5, 4, 6, 8, 4, 3, 7 };
+        // find third max
+        int[] arr = { 7, 5, 4, 6, 6, 4, 3, 7 };
+        Arrays.sort(arr);
+        int countMax = 0;
         int max = Integer.MIN_VALUE;
-        for (int i = 0; i < arr.length; i++) {
-            max = Math.max(max, arr[i]);
-        }
-        for (int level = max; level >= 1; level--) {
-            for (int star = 0; star < arr.length; star++) {
-                if (level < arr[star]) {
-                    System.out.print("\t*");
-
-                }else{
-                    System.out.print("\t");
-                }
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] != max) {
+                countMax++;
+                max = arr[i];
+            }
+            if (countMax == 3) {
+                System.out.println(arr[i]);
+                break;
 
             }
-            System.out.println();
 
         }
+
     }
 }
