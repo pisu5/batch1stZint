@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="parent">
+      <!--Add dynamically content-->
+    </div>
+    <script>
+      
+      let h1 = document.querySelector("h1");
+      console.log(h1);
+      h1.innerText = "Chnage element";
+      h1.style.color = "red";
+      let parent = document.querySelector(".parent"); //div
+      let ol = document.createElement("ul");
+      ol.style.listStyle = "triangle";
+      parent.appendChild(ol);
+      for (let i = 1; i <= 100; i++) {
+        let li = document.createElement("li");
+        if (i % 2 == 0) {
+          li.innerText = "Successfully created";
+        } else {
+          li.remove();
+        }
+
+        ol.appendChild(li);
+      }
+        
+    </script>
+  </body>
+</html>

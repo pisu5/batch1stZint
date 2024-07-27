@@ -1,4 +1,4 @@
-//functuon dclare
+/*functuon dclare
 
 function foo() {
   console.log("Function is declare and intilize");
@@ -35,3 +35,44 @@ function restpara(...a) {
 }
 restpara(1, 23, 4, 6, 7, 9, 3, 854, 57, 36);
 
+
+//arrow function and return statement
+function abc(a, f, v) {
+  return a + f + v;
+}
+let a = 4;
+if (a % 2 !== 0) {
+  return;
+} else {
+  console.log("hellop");
+}
+const arrow = (a, b) => {
+  //body
+  return a + b;
+};
+let g = arrow(1, 2);
+console.log(g);
+
+//callbacks functions
+
+function example(callbacks) {
+  console.log("call back");
+  callbacks();
+}
+function excute() {
+  console.log("Excute function with example");
+}
+example(excute);
+*/
+function getTicket(callbacks) {
+  setTimeout(() => {
+    const ticketGet = "ticket get";
+    console.log(ticketGet);
+    let money = 300;
+    callbacks(money);
+  }, 2000);
+}
+function ticketCounter(money) {
+  console.log(money);
+}
+getTicket(ticketCounter);
