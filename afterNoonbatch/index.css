@@ -94,11 +94,9 @@ ul li {
   justify-content: center;
 }
 .contentcard {
-background-color:transparent;
+  background-color: transparent;
 
- 
   margin: 12px;
- 
 }
 .contentcard .image img {
   height: 200px;
@@ -120,4 +118,74 @@ background-color:transparent;
 }
 .foo-content p {
   font-weight: normal;
+}
+/*collection part*/
+.collectionContainer {
+  margin-top: 50px;
+}
+.collectionHead {
+  margin-left: 200px;
+}
+.collectionHead p {
+  font-size: 20px;
+  font-weight: 200;
+  font-family: Okra, Helvetica, sans-serif;
+}
+.collectionHead h3 {
+  font-size: xx-large;
+  font-family: Okra, Helvetica, sans-serif;
+}
+.collectionImages {
+  display: flex;
+  justify-content: center;
+}
+.collection1 {
+  margin: 12px;
+}
+
+.collection1 img {
+  height: 270px;
+  width: 270px;
+  border-radius: 10px;
+}
+.collectionImages .abstext {
+  margin: 7px;
+  font-size: 20px;
+  color: white;
+  margin-top: 75%;
+  position: absolute;
+  top: 0;
+}
+.drop-icon {
+  display: flex;
+}
+.drop-icon i {
+  position: relative;
+  left: 10px;
+  bottom: 3px;
+}
+/*location table area*/
+.localities {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.row1-tab-location {
+  display: flex;
+  justify-content: space-evenly;
+}
+.child-loacations {
+  margin: 10px;
+  width: 300px;
+  height:80px;
+
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border: 1px solid white;
+}
+.child-loacations i{
+position: relative;
+right: 20px;
+  float: right;
+
 }
