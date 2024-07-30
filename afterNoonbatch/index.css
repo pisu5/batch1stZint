@@ -178,14 +178,74 @@ ul li {
 .child-loacations {
   margin: 10px;
   width: 300px;
-  height:80px;
+  height: 80px;
 
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   border: 1px solid white;
 }
-.child-loacations i{
-position: relative;
-right: 20px;
+.child-loacations i {
+  position: relative;
+  right: 20px;
   float: right;
-
 }
+.localities {
+  margin: 70px;
+}
+.popular-loca {
+  margin: 30px;
+
+  font-size: 35px;
+  font-family: Okra, Helvetica, sans-serif;
+}
+.popular-loca p {
+  font-weight: lighter;
+}
+.form-mob {
+  width: 100%;
+  background-color: antiquewhite;
+}
+.left-form {
+  position: relative;
+  left: 250px;
+}
+.left-form img {
+  height: 250px;
+}
+.form-mob {
+  display: flex;
+}
+.right-form {
+  position: relative;
+  left: 25%;
+}
+.right-form p,
+h3 {
+  margin: 10px;
+  padding: 10px;
+}
+.right-form h3 {
+  font-size: xx-large;
+}
+.right-form img {
+  width: 380px;
+}
+.input-form input {
+  border-radius: 10px;
+
+  height: 40px;
+  width: 50%;
+}
+.input-form button {
+  border-radius: 10px;
+  width: 150px;
+  background-color: red;
+  color: white;
+  height: 50px;
+}
+.donwlaod-form{
+  margin: 12px;
+}
+.donwlaod-form img{
+  width: 130px;
+}
+
