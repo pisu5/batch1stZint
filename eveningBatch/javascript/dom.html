@@ -4,14 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
+    <style>
+      .con {
+        width: 80%;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        margin: 12px;
+        height: 700px;
+      }
+      .circle {
+        height: 100px;
+        width: 100px;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+          rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+          rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+          rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+          rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+          rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        border-radius: 50%;
+      }
+    </style>
   </head>
   <body>
+    <button>Click me</button>
+    <div class="con"></div>
     <!---<h1>This is element </h1>
     <p id="p">this is id</p>
     <p class="p">this is class</p>
   
--->
+
     
     <script>
         let ol = document.createElement("ol");
@@ -25,6 +47,23 @@
       console.log(clas);
       const ele = document.querySelector("p");
       console.log(ele);
+    </script>
+  -->
+
+    <script>
+      let btn = document.querySelector("button");
+      btn.addEventListener("mouseover", function () {
+        let con = document.querySelector(".con");
+        let div = document.createElement("div");
+        div.classList.add("circle");
+        con.appendChild(div);
+        div.addEventListener("dblclick", function () {
+          div.remove();
+        });
+        div.addEventListener("click",function(){
+          div.setAttribute("contentEditable","true");
+        })
+      });
     </script>
   </body>
 </html>

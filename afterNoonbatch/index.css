@@ -242,10 +242,79 @@ h3 {
   color: white;
   height: 50px;
 }
-.donwlaod-form{
+.donwlaod-form {
   margin: 12px;
 }
-.donwlaod-form img{
+.donwlaod-form img {
   width: 130px;
 }
 
+.footer {
+}
+.footer-head {
+  width: 100%;
+  display: flex;
+}
+.footer-head img {
+  vertical-align: middle;
+  margin: 10px;
+  height: 40px;
+}
+.footer-logo{
+  position: relative;
+  left: 300px;
+}
+.right-footer {
+  margin: 10px;
+  position: relative;
+  left: 60%;
+  float: right;
+}
+
+.indiaLanguage {
+  width: 100%;
+  display: flex;
+  column-gap: 10px;
+}
+
+.india {
+  border-radius: 7px;
+  justify-content: center;
+  align-items: center;
+  width: 125px;
+
+  display: flex;
+  column-gap: 10px;
+  height: 40px;
+  border: 1px solid grey;
+}
+.india img {
+  vertical-align: middle;
+  height: 30px;
+  margin: 2px;
+}
+.row2{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  
+}
+.row2 ul li{
+  padding: 35px;
+  font-weight: 600;
+}
+.footer-icons{
+  display: flex;
+  column-gap: 10px;
+}
+.row3{
+  position: relative;
+  top: 0 ;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  
+}
+.row3 ul li{
+  padding: 40px;
+}

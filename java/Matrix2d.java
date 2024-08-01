@@ -76,17 +76,56 @@ public class Matrix2d {
          * }
          * }
          * System.out.println(Arrays.deepToString(copy));
-         
-        //que no-11
+         * 
+         * //que no-11
+         * int[][] mat = { { 1, 2, 3, 5 }, { 6, 7, 8, 9 }, { 10, 13, 14, 15 } };
+         * for (int i = 0; i < mat[0].length; i++) {
+         * for (int j = 0; j < mat.length; j++) {
+         * System.out.println(mat[j][i] + "\t");
+         * 
+         * }
+         * }
+         * 
+         * 
+         * // que 14
+         * int[][] mat = { { 1, 2, 3, 5 }, { 6, 7, 8, 9 }, { 10, 13, 14, 15 } };
+         * int rowsLength = mat.length;
+         * int maxIndex = -1;
+         * 
+         * int maxSum = Integer.MIN_VALUE;
+         * 
+         * for (int i = 0; i < mat.length; i++) {
+         * int sum = 0;
+         * for (int j = 0; j < mat[i].length; j++) {
+         * sum += mat[i][j];
+         * 
+         * }
+         * if (sum > maxSum) {
+         * maxSum = sum;
+         * maxIndex = i;
+         * }
+         * }
+         * System.out.println(maxIndex);
+         */
         int[][] mat = { { 1, 2, 3, 5 }, { 6, 7, 8, 9 }, { 10, 13, 14, 15 } };
-        for (int i = 0; i < mat[0].length; i++) {
-            for (int j = 0; j < mat.length; j++) {
-                System.out.println(mat[j][i] + "\t");
+        int rowsLength = mat.length;
+        int colLength = mat[0].length;
+
+        int minSum = Integer.MAX_VALUE;
+        int minIndex = -1;
+
+        for (int i = 0; i < colLength; i++) {
+            int sum = 0;
+            for (int j = 0; j < rowsLength; j++) {
+                sum += mat[j][i];
 
             }
+            if (sum < minSum) {
+                minSum = sum;
+                minIndex = i;
+            }
         }
-            */
-            
+        System.out.println(minIndex);
 
     }
 

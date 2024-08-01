@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      .circle {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+      }
+      .square {
+        height: 100px;
+        width: 100px;
+      }
+      .container {
+        justify-content: center;
+        column-gap: 10px;
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="number" />
+    <input type="color" />
+    <select name="color" id="">
+      <option value="circle">circle</option>
+      <option value="square">square</option>
+    </select>
+    <button>Create</button>
+    <div class="container"></div>
+    <script>
+      let inN = document.querySelector('input[type="number"]');
+      let inN2 = document.querySelector('input[type="color"]');
+      let btn = document.querySelector("button");
+      let list = document.querySelector("select");
+      let container = document.querySelector(".container");
+      btn.addEventListener("click", create);
+      function create() {
+        const number = inN.value;
+        const color = inN2.value;
+        const select = list.value;
+        for (let i = 1; i <= number; i++) {
+          let div = document.createElement("div");
+          if (select == "circle") {
+            div.classList.add("circle");
+            div.style.backgroundColor = color;
+            container.appendChild(div);
+          } else {
+            div.classList.add("square");
+            div.style.backgroundColor = color;
+            container.appendChild(div);
+          }
+          div.addEventListener("dblclick",function(){
+          div.remove()
+            
+          })
+
+
+        }
+      }
+    </script>
+  </body>
+</html>

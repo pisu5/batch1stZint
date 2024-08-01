@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        column-gap: 8px;
+      }
+      .circle {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+      }
+      .square {
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <input class="number" type="number" /><input class="color" type="color" />
+    <select name="shape">
+      <option value="circle">circle</option>
+      <option value="square">square</option>
+    </select>
+    <button>Create</button>
+    <div class="container"></div>
+    <script>
+      let numInput = document.querySelector(".number");
+      let colorInput = document.querySelector(".color");
+      let selectInput = document.querySelector("select"); //element selector
+      let btn = document.querySelector("button");
+      let con = document.querySelector(".container");
+      btn.addEventListener("click", createShape);
+      function createShape() {
+        const numval = numInput.value;
+        // console.log(numval)
+        const colorVal = colorInput.value;
+        // console.log(colorVal)
+        const selectVal = selectInput.value;
+        for (let i = 1; i <= numval; i++) {
+          let div = document.createElement("div");
+          if (selectVal == "circle") {
+            div.classList.add("circle");
+            div.style.backgroundColor = colorVal;
+          }else{
+            div.classList.add("square");
+            div.style.backgroundColor = colorVal;
+
+          }
+          con.appendChild(div);
+          
+        }
+      }
+    </script>
+  </body>
+</html>
