@@ -106,27 +106,68 @@ public class Matrix2d {
          * }
          * }
          * System.out.println(maxIndex);
+         * 
+         * //que-find min 15
+         * int[][] mat = { { 1, 2, 3, 5 }, { 6, 7, 8, 9 }, { 10, 13, 14, 15 } };
+         * int rowsLength = mat.length;
+         * int colLength = mat[0].length;
+         * 
+         * int minSum = Integer.MAX_VALUE;
+         * int minIndex = -1;
+         * 
+         * for (int i = 0; i < colLength; i++) {
+         * int sum = 0;
+         * for (int j = 0; j < rowsLength; j++) {
+         * sum += mat[j][i];
+         * 
+         * }
+         * if (sum < minSum) {
+         * minSum = sum;
+         * minIndex = i;
+         * }
+         * }
+         * System.out.println(minIndex);
+         * 
+         * //Que 16
+         * int[][] mat = { { 1, 2, 3, 5 }, { 6, 7, 8, 9 }, { 10, 13, 14, 15 } };
+         * int row = 0;
+         * int col = mat[0].length - 1;
+         * System.out.println(col);
+         * int ri = -1;
+         * int ci = -1;
+         * int k = 6;
+         * while (row <= mat.length && col >= 0) {
+         * if (mat[row][col] == k) {
+         * ri = row;
+         * ci = col;
+         * break;
+         * 
+         * } else if (k < mat[row][col]) {
+         * col--;
+         * } else if (k > mat[row][col]) {
+         * row++;
+         * }
+         * 
+         * }
+         * System.out.println("Index of row" + " " + ri);
+         * System.out.println("Index of col" + " " + ci);
          */
+        // que 17
         int[][] mat = { { 1, 2, 3, 5 }, { 6, 7, 8, 9 }, { 10, 13, 14, 15 } };
-        int rowsLength = mat.length;
-        int colLength = mat[0].length;
+        for (int col = 0; col <mat[0].length; col++) {
+            if (col % 2 == 0) {
+                for (int rows = 0; rows < mat.length; rows++) {
+                    System.out.println(mat[rows][col]);
+                }
+            } else {
+                for (int rows = mat.length-1; rows >= 0; rows--) {
+                    System.out.println(mat[rows][col]);
 
-        int minSum = Integer.MAX_VALUE;
-        int minIndex = -1;
-
-        for (int i = 0; i < colLength; i++) {
-            int sum = 0;
-            for (int j = 0; j < rowsLength; j++) {
-                sum += mat[j][i];
+                }
 
             }
-            if (sum < minSum) {
-                minSum = sum;
-                minIndex = i;
-            }
+
         }
-        System.out.println(minIndex);
-
     }
 
 }
