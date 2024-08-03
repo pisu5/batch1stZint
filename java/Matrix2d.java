@@ -151,23 +151,54 @@ public class Matrix2d {
          * }
          * System.out.println("Index of row" + " " + ri);
          * System.out.println("Index of col" + " " + ci);
+         * 
+         * // que 17
+         * int[][] mat = { { 1, 2, 3, 5 }, { 6, 7, 8, 9 }, { 10, 13, 14, 15 } };
+         * for (int col = 0; col <mat[0].length; col++) {
+         * if (col % 2 == 0) {
+         * for (int rows = 0; rows < mat.length; rows++) {
+         * System.out.println(mat[rows][col]);
+         * }
+         * } else {
+         * for (int rows = mat.length-1; rows >= 0; rows--) {
+         * System.out.println(mat[rows][col]);
+         * 
+         * }
+         * 
+         * }
+         * 
+         * }
          */
-        // que 17
+        // que 18
         int[][] mat = { { 1, 2, 3, 5 }, { 6, 7, 8, 9 }, { 10, 13, 14, 15 } };
-        for (int col = 0; col <mat[0].length; col++) {
-            if (col % 2 == 0) {
-                for (int rows = 0; rows < mat.length; rows++) {
-                    System.out.println(mat[rows][col]);
-                }
-            } else {
-                for (int rows = mat.length-1; rows >= 0; rows--) {
-                    System.out.println(mat[rows][col]);
-
-                }
+        int rowLen = mat.length;
+        int cols = mat[0].length;
+        for (int col = 0; col < cols; col++) {
+            int i = 0;
+            int j = col;
+            while (i < rowLen && j>=0) {
+                System.out.print(mat[i][j] + " ");
+                i++;
+                j--;
 
             }
+            System.out.println();
 
         }
+        // print elemnt from columns
+        for (int row = 1; row < rowLen; row++) {
+            int i = row;
+            int j = 0;
+            while (i < rowLen && j>=0) {
+                System.out.print(mat[i][j] + " ");
+                i++;
+                j--;
+
+            }
+            System.out.println();
+
+        }
+
     }
 
 }
