@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" placeholder="enter task" />
+      <button>Submit</button>
+    </div>
+    <div class="list">
+      <ol></ol>
+    </div>
+    <script>
+      const input = document.querySelector("input");
+      const btn = document.querySelector("button");
+      const ol = document.querySelector("ol");
+      btn.addEventListener("click", function () {
+        const inputval = input.value;
+        const li = document.createElement("li");
+        li.innerText = inputval;
+        let remove = document.createElement("button");
+        remove.innerText = "Remove";
+        let update = document.createElement("button");
+        update.innerText = "Update";
+        let ids = "uid/" + Date.now();
+        li.appendChild(update);
+        li.appendChild(remove);
+        console.log(ids);
+        li.id = ids;
+
+        ol.appendChild(li);
+        remove.addEventListener("click", function () {
+          li.remove();
+        });
+        update.addEventListener("click", function () {
+          let getId = document.getElementById(ids);
+          if (input.value == " " || input.value.trim() == "") {
+            alert("Please write updated value inside input");
+            return;
+          }
+
+          getId.innerHTML = input.value;
+          console.log(input.value);
+          li.appendChild(update);
+          li.appendChild(remove);
+        });
+      });
+    </script>
+  </body>
+</html>
