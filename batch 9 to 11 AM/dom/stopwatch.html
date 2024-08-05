@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p></p>
+    <button>start</button>
+    <button id="stop">false</button>
+    <script>
+      var p = document.querySelector("p");
+      var count2 = 0;
+      var istrue = true;
+
+      let btn = document.querySelector("button");
+      let timeout;
+      btn.addEventListener("click", count);
+      function count() {
+        if (!istrue) {
+          return;
+        }
+        count2++;
+        p.textContent = count2;
+        timeout = setTimeout(count, 1000);
+      }
+      document.getElementById("stop").addEventListener("click", stopCounting);
+      function stopCounting() {
+        istrue = false;
+      }
+    </script>
+  </body>
+</html>

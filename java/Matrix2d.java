@@ -168,34 +168,96 @@ public class Matrix2d {
          * }
          * 
          * }
+         * 
+         * // que 18
+         * int[][] mat = { { 1, 2, 3, 5 }, { 6, 7, 8, 9 }, { 10, 13, 14, 15 } };
+         * int rowLen = mat.length;
+         * int cols = mat[0].length;
+         * for (int col = 0; col < cols; col++) {
+         * int i = 0;
+         * int j = col;
+         * while (i < rowLen && j>=0) {
+         * System.out.print(mat[i][j] + " ");
+         * i++;
+         * j--;
+         * 
+         * }
+         * System.out.println();
+         * 
+         * }
+         * // print elemnt from columns
+         * for (int row = 1; row < rowLen; row++) {
+         * int i = row;
+         * int j = 0;
+         * while (i < rowLen && j>=0) {
+         * System.out.print(mat[i][j] + " ");
+         * i++;
+         * j--;
+         * 
+         * }
+         * System.out.println();
+         * 
+         * }
+         * //que 21
+         * 
+         * int[] arr1 = { 1, 2, 3, 4, 5, 6, 7 };
+         * int[] arr2 = { 1, 2, 3, 4, 5, 6, 7 };
+         * int[] arr3 = { 1, 2, 3, 4, 5, 6, 7 };
+         * int[] arr4 = { 1, 2, 3, 4, 5, 6, 7 };
+         * int[][] matrix = { arr1, arr2, arr3, arr4 };
+         * 
+         * for(int i =0;i<matrix.length;i++){
+         * int [] target = matrix[i];
+         * int st = 0;
+         * int end = target.length-1;
+         * while(st<end){
+         * int temp = target[st];
+         * target[st]= target[end];
+         * target[end] = temp;
+         * st++;
+         * end--;
+         * }
+         * 
+         * 
+         * }
+         * System.out.println(Arrays.deepToString(matrix));
          */
-        // que 18
-        int[][] mat = { { 1, 2, 3, 5 }, { 6, 7, 8, 9 }, { 10, 13, 14, 15 } };
-        int rowLen = mat.length;
-        int cols = mat[0].length;
-        for (int col = 0; col < cols; col++) {
-            int i = 0;
-            int j = col;
-            while (i < rowLen && j>=0) {
-                System.out.print(mat[i][j] + " ");
-                i++;
-                j--;
+        // que 19
+        int[][] arr1 = { { 1, 2, 3, 4 }, { 10, 13, 14, 15 }, { 20, 30, 40, 50 } };
+        int totalEle = arr1.length * arr1[0].length;
+        int count = 0;
+        int rowMin = 0;
+        int rowmax = arr1.length - 1;
+        int colMin = 0;
+        int colmax = arr1[0].length - 1;
+        while (count < totalEle) {
+            for (int col = colMin; col < colmax && count < totalEle; col++) {
 
+                System.out.println(arr1[rowMin][col] + " ");
+                count++;
             }
-            System.out.println();
+            for (int row = rowMin; row <rowmax && count < totalEle; row++) {
 
-        }
-        // print elemnt from columns
-        for (int row = 1; row < rowLen; row++) {
-            int i = row;
-            int j = 0;
-            while (i < rowLen && j>=0) {
-                System.out.print(mat[i][j] + " ");
-                i++;
-                j--;
-
+                System.out.println(arr1[row][colmax] + " ");
+                count++;
             }
-            System.out.println();
+            for (int colm = colmax; colm > colMin && count < totalEle; colm--) {
+
+                System.out.println(arr1[rowmax][colm] + " ");
+                count++;
+            }
+
+            for (int rowm = rowmax; rowm >rowMin && count < totalEle; rowm--) {
+
+                System.out.println(arr1[rowm][colMin] + " ");
+                count++;
+            }
+
+            rowMin++;
+            rowmax--;
+
+            colMin++;
+            colmax--;
 
         }
 
