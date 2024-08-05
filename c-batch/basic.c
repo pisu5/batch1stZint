@@ -5,10 +5,8 @@ int main(){
     char c = 'f';
     printf("%1f\n",f); //print float dt
      printf("%5f",d); //print doduble dt
-      printf("%c\n",c); //print char dt
-      
-      //if else revision 
-      
+      printf("%c\n",c); //print char dt    
+      //if else revision  
       int a = 4; // 4==2
       int b = 2;
       int c = 2; //2==4
@@ -30,9 +28,7 @@ int main(){
       }else{
         printf("Our triangle is scelene");
       }
-      
-     
-     
+        
      int table = 4;
      int a = 3;
      int b = 6;
@@ -44,10 +40,8 @@ int main(){
      
      //print sum of all even numbers
     // printf("Enter number for you want to get sums");
-     int num = 0; //10
-     
+     int num = 0; //10  
      scanf("%d",&num);
-    
      int sum = 0;
     for(int i =1;i<=num;i++{
       if(i%2==0){
