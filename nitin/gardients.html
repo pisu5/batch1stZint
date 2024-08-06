@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .allGrad {
+        display: flex;
+        justify-content: center;
+      }
+      .radial {
+        border-radius: 50%;
+        height: 200px;
+        width: 200px;
+        background-color: aqua;
+        background-image: radial-gradient(yellow, red, brown);
+      }
+      .linear {
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        background-color: aqua;
+        background-image: linear-gradient(
+          to right,
+          rgb(231, 38, 173) 5%,
+          rgb(228, 9, 9),
+          rgb(18, 181, 214) 100%
+        );
+      }
+      h1 {
+        font-size: 50px;
+        background: linear-gradient(blue, red, yellow);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .conic {
+        border-radius: 50%;
+        height: 200px;
+        width: 200px;
+        background-color: aqua;
+        background-image: conic-gradient(
+          rgb(146, 252, 6) 5%,
+          rgb(228, 9, 9),
+          rgb(18, 181, 214) 100%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="allGrad">
+      <div class="radial"></div>
+      <div class="linear"></div>
+      <div class="conic"></div>
+    </div>
+
+    <h1>Hello, this is nitin</h1>
+  </body>
+</html>
