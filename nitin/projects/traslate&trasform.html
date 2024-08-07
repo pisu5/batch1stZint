@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .element {
+        background: linear-gradient(180deg, #ff8a00, #e52e71);
+        height: 100px;
+        width: 100px;
+        color: white;
+        animation: skew 3s infinite;
+        transform: skew(20deg);
+        animation-direction: reverse;
+        opacity: 0.7;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @keyframes skew {
+        0% {
+          transform: skew(20deg, 20deg);
+          background-color: rgb(2, 254, 31);
+        }
+        100% {
+          transform: skew(-20deg, -20deg);
+        }
+      }
+      .div {
+        height: 200px;
+        width: 200px;
+        animation: nitin 5s ease-in infinite, trans 5s ease-in-out infinite;
+      }
+      @keyframes nitin {
+        0%{
+            background-color: cornflowerblue;
+
+        }
+        20%{
+            transform: skew(100px,50%) rotate(135deg);
+
+        }
+        30%{
+            background-color: black;
+        }
+       
+        50% {
+          transform: translate(100px,50%) rotate(135deg);
+          background-color: rgb(255, 0, 0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="element">1</div>
+    <div class="elemewdent">2</div>
+    <div class="elemefent">3</div>
+    <div class="elemefent">4</div>
+
+    <div class="div"></div>
+  </body>
+</html>

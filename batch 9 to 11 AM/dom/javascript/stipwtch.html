@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="count"></p>
+    <p id="sec"></p>
+    <p id="min"></p>
+    <p id="hours"></p>
+    <button id="start">start</button>
+    <button>stop</button>
+    <script>
+      let sec = 0;
+      let min = 0;
+      let hours = 0;
+      let count = 0;
+      let isRunning = true;
+      document.querySelector("#start").addEventListener("click", timer);
+
+      function timer() {
+        if (isRunning) {
+          count++;
+          if (count == 100) {
+            sec++;
+            count = 0;
+          } else if (sec == 60) {
+            min++;
+            sec = 0;
+          } else if (min == 60) {
+            hours++;
+            min = 0;
+            sec = 0;
+          }
+          let h = hours;
+          let se = sec;
+          let minV = min;
+          document.getElementById("sec").innerText = se;
+          document.getElementById("min").innerText = min;
+          document.getElementById("hours").innerText = h;
+          document.getElementById("count").innerText = count;
+          setTimeout(timer, 20);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Control with Timer</title>
+    <style>
+        #countDisplay {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="countDisplay">0</div>
+    <button id="toggleButton">Start</button>
+
+    <script>
+        let count = 0;
+        let counting = false;
+        let timerId;
+
+        const countDisplay = document.getElementById('countDisplay');
+        const toggleButton = document.getElementById('toggleButton');
+
+        function updateCount() {
+            countDisplay.textContent = count;
+        }
+
+        function startCounting() {
+            counting = true;
+            timerId = setTimeout(() => {
+                count++;
+                updateCount();
+                startCounting(); // Call recursively
+            }, 1000); // Increase count every second
+        }
+
+        function stopCounting() {
+            counting = false;
+            clearTimeout(timerId);
+        }
+
+        toggleButton.addEventListener('click', () => {
+            if (counting) {
+                stopCounting();
+                toggleButton.textContent = 'Start';
+            } else {
+                startCounting();
+                toggleButton.textContent = 'Stop';
+            }
+        });
+    </script>
+</body>
+</html>
