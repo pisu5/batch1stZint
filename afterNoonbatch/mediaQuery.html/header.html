@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: cornflowerblue;
+      }
+      header {
+        background-color: coral;
+      }
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      nav {
+        position: relative;
+      }
+      .nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+      .nav-list li {
+        padding: 4px;
+        margin: 0 px;
+      }
+      .nav-list a {
+        text-decoration: none;
+        display: block;
+        padding: 12px;
+        margin: 2px;
+        color: white;
+      }
+      .toggle {
+        display: none;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font: 10px;
+      }
+      @media (max-width: 768px) {
+        body{
+            background-color: darkgoldenrod;
+        }
+        .nav-list {
+          display: none;
+          flex-direction: column;
+
+          background-color: rgb(21, 19, 19);
+          position: absolute;
+          top: 5px;
+        }
+
+        .nav-list.active {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .nav {
+          position: relative;
+          right: 50px;
+          display: flex;
+          justify-content: center;
+        }
+        .toggle {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Logo</h1>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Profile</a></li>
+            <li><a href="">Account</a></li>
+            <li><a href="">Logout</a></li>
+          </ul>
+          <button class="toggle">&#9776;</button>
+        </nav>
+      </div>
+    </header>
+    <script>
+      let btn = document.querySelector(".toggle");
+      let navList = document.querySelector(".nav-list");
+      btn.addEventListener("click", function () {
+        navList.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
