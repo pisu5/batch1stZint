@@ -80,30 +80,76 @@ public class reverseString {
          * for(char c: remove){
          * System.out.println(c);;
          * }
+         * 
+         * //que 7
+         * String s = "i love my country because I am indian";
+         * 
+         * String ans = "";
+         * boolean iscap = true;
+         * 
+         * for (int i = 0; i < s.length(); i++) {
+         * char curentChar = s.charAt(i);
+         * 
+         * if (curentChar == ' ') {
+         * ans += curentChar;
+         * iscap = true;
+         * } else {
+         * if (iscap) {
+         * ans += Character.toUpperCase(curentChar);
+         * iscap = false;
+         * 
+         * } else {
+         * ans += Character.toLowerCase(curentChar);
+         * }
+         * 
+         * }
+         * 
+         * }System.out.println(ans);
+         * 
+         * //remove consucutive duplicates
+         * String s = "oiiindddiaoon";
+         * String ans = "" + s.charAt(0); // i
+         * for (int i = 1; i < s.length(); i++) {
+         * char start = s.charAt(i - 1); // 0 2-1=1
+         * char next = s.charAt(i); // i
+         * if (start != next) {
+         * ans += next;
+         * 
+         * }
+         * 
+         * }
+         * System.out.println(ans);
+         * 
+         * String s = "oiiindddiaoon";
+         * String ans = "" + s.charAt(0); // i
+         * for (int i = 0; i < s.length(); i++) {
+         * char c = s.charAt(i);
+         * boolean isDupli = false;
+         * 
+         * // check if char is dduple
+         * 
+         * for (int j = 0; j < s.length(); j++) {
+         * if (i != j && c == s.charAt(j)) {
+         * isDupli = true;
+         * break;
+         * 
+         * }
+         * }
+         * if (!isDupli) {
+         * ans += c;
+         * }
+         * }
+         * System.out.println(ans);
          */
-        String s = "i love my country because I am indian";
-
-        String ans = "";
-        boolean iscap = true;
-
+        String s = "innndiaaa";
+        String ans = "" + s.charAt(0); // i
         for (int i = 0; i < s.length(); i++) {
-            char curentChar = s.charAt(i);
-
-            if (curentChar == ' ') {
-                ans += curentChar;
-                iscap = true;
-            } else {
-                if (iscap) {
-                    ans += Character.toUpperCase(curentChar);
-                    iscap = false;
-
-                } else {
-                    ans += Character.toLowerCase(curentChar);
-                }
-
+            char c = s.charAt(i);
+            if(ans.indexOf(c)==-1){
+                ans+=c;
             }
-
-        }System.out.println(ans);
+        }
+        System.out.println(ans);
 
     }
 

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .bg {
+        height: fit-content;
+        height: fit-content;
+        width: 100%;
+      }
+      .bg img {
+        filter: brightness(30%);
+        height: 700px;
+
+        width: 100%;
+      }
+      .header {
+        width: 100%;
+        position: absolute;
+        top: 0;
+      }
+      .logo {
+        width: fit-content;
+        margin: 30px;
+      }
+      .logo img {
+        height: 130px;
+      }
+      .header {
+        display: flex;
+      }
+      .right {
+        justify-items: center;
+        align-items: center;
+        display: flex;
+        bottom: 70px;
+        position: relative;
+        left: 50%;
+      }
+      .select {
+        background-color: black;
+        color: white;
+      }
+      .select select {
+        background-color: black;
+        color: white;
+        height: 30px;
+
+        width: 100px;
+      }
+      .btn {
+        text-align: center;
+        border-radius: 5px;
+
+        height: 100px;
+        margin: 8px;
+        padding: 4px;
+        width: 80px;
+        height: fit-content;
+        background-color: red;
+        color: white;
+      }
+      .top-middle-area {
+        align-items: center;
+        position: relative;
+        width: 100%;
+        right: 300px;
+        top: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .top-middle-area .c {
+        color: white;
+      }
+      h1 {
+        font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto,
+          Ubuntu, sans-serif;
+        font-weight: 900;
+        font-size: 48px;
+        text-decoration: none solid rgb(255, 255, 255);
+      }
+      .tMa-2 {
+        height: fit-content;
+        position: relative;
+        bottom: 50px;
+      }
+      h3 {
+        font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto,
+          Ubuntu, sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+      }
+      h4 {
+        font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto,
+          Ubuntu, sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+      }
+      .tMa-3 {
+        position: relative;
+        bottom: 70px;
+      }
+      .tMa-4 {
+        display: flex;
+        column-gap: 50px;
+      }
+      .tma-last-input {
+        height: 50px;
+        width: 80px;
+        background: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="bg">
+        <img
+          alt=""
+          aria-hidden="true"
+          data-uia="nmhp-card-hero+background+image"
+          src="https://assets.nflxext.com/ffe/siteui/vlv3/b2c3e95b-b7b5-4bb7-a883-f4bfc7472fb7/19fc1a4c-82db-4481-ad08-3a1dffbb8c39/IN-en-20240805-POP_SIGNUP_TWO_WEEKS-perspective_WEB_24a485f6-1820-42be-9b60-1b066f1eb869_small.jpg"
+          srcset="
+            https://assets.nflxext.com/ffe/siteui/vlv3/b2c3e95b-b7b5-4bb7-a883-f4bfc7472fb7/19fc1a4c-82db-4481-ad08-3a1dffbb8c39/IN-en-20240805-POP_SIGNUP_TWO_WEEKS-perspective_WEB_24a485f6-1820-42be-9b60-1b066f1eb869_small.jpg  1000w,
+            https://assets.nflxext.com/ffe/siteui/vlv3/b2c3e95b-b7b5-4bb7-a883-f4bfc7472fb7/19fc1a4c-82db-4481-ad08-3a1dffbb8c39/IN-en-20240805-POP_SIGNUP_TWO_WEEKS-perspective_WEB_24a485f6-1820-42be-9b60-1b066f1eb869_medium.jpg 1500w,
+            https://assets.nflxext.com/ffe/siteui/vlv3/b2c3e95b-b7b5-4bb7-a883-f4bfc7472fb7/19fc1a4c-82db-4481-ad08-3a1dffbb8c39/IN-en-20240805-POP_SIGNUP_TWO_WEEKS-perspective_WEB_24a485f6-1820-42be-9b60-1b066f1eb869_large.jpg  1800w
+          "
+          class="default-ltr-cache-1jxs5rh e13sg9vu0"
+        />
+      </div>
+      <div class="header">
+        <div class="logo">
+          <img src="./Netflix_Logo_PMS.png" alt="" />
+        </div>
+        <div class="right">
+          <div class="select">
+            <select>
+              <option value="English">English</option>
+              <option value="Hindi">Hindi</option>
+            </select>
+          </div>
+          <div class="btn">Sign in</div>
+        </div>
+
+        <div class="top-middle-area">
+          <div class="tMa-1 c h1">
+            <h1>Unlimited movies ,TV Shows and more</h1>
+          </div>
+          <div class="tMa-2 c">
+            <h3>Watch anywhere. Cancel anytime.</h3>
+          </div>
+          <div class="tMa-3 c">
+            <h4>
+              Ready to watch? Enter your email to create or restart your
+              membership.
+            </h4>
+          </div>
+          <div class="tMa-4">
+            <div class="tma-last-input">
+              <span>Email Adress</span>
+              <input type="text" />
+            </div>
+           
+          </div>
+          <div style="background-color: aqua" class="tma-last-btn">
+            Button
+          </div>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>

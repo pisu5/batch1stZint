@@ -1,4 +1,6 @@
-greet(); 
+const { scriptInjector } = require("puppeteer");
+
+/*greet(); 
 function greet() { //error // hello
  // console.log(y); // error //
   var a = 4; //a ==undefined
@@ -12,3 +14,5 @@ let f = 22; //f ==undefine tdz
 var fg = 67; //  fg = undeifned 
 console.log(gd); //
 var gd = 56; //gd = undifined
+*/
+
