@@ -140,17 +140,52 @@ public class reverseString {
          * }
          * }
          * System.out.println(ans);
+         * 
+         * String s = "innndiaaa";
+         * String ans = "" + s.charAt(0); // i
+         * for (int i = 0; i < s.length(); i++) {
+         * char c = s.charAt(i);
+         * if(ans.indexOf(c)==-1){
+         * ans+=c;
+         *
+         * }
+         * System.out.println(ans);
          */
-        String s = "innndiaaa";
-        String ans = "" + s.charAt(0); // i
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            if(ans.indexOf(c)==-1){
-                ans+=c;
-            }
-        }
-        System.out.println(ans);
+        String d = "fhhhhkkkppp";
+        String g = compress(d);
+        System.out.println(g);
 
     }
+
+    public static String compress(String c) {
+        int count = 0;
+        String ans = "";
+        for (int i = 1; i <= c.length(); i++) {
+            char curre = c.charAt(i);
+            char pre = c.charAt(i - 1);
+            if (curre == pre) {
+                count++;
+            }else{
+                if (count > 1) {
+                    ans += count;
+                    
+
+                }
+                ans += pre;
+                count =1;
+
+            }
+        }
+               
+            }
+            if (count > 1) {
+                ans += count;
+
+            }
+            ans += c.charAt(c.length() - 1);
+
+        }return ans;
+
+}
 
 }

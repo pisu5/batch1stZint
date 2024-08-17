@@ -1,0 +1,5 @@
+Double and trible equals difference = https://docs.google.com/document/d/1CxiKRENsTfXypnRGTCxoxFeF4V8OSVrdezuom0Enm9w/edit?usp=sharing
+
+hoisting questionns links = https://docs.google.com/document/d/1A_J-DCphFv0kgxm_7q-oHbno1CyqKDgyEq4a80mIldY/edit?usp=sharing
+
+hoisting basics = https://docs.google.com/document/d/1n3zFIPuvK5wphqcExcr0gXdTL0RZvY9YGjMfjnAhyps/edit?usp=sharing

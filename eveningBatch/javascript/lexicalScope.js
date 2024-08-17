@@ -62,7 +62,6 @@ for (var i = 0; i <= 10; i++) {
   console.log(i);
 }
 console.log(i);
-*/
 function infinite(){
     console.log("calling function wait for 3 second...")
     setTimeout(() => {
@@ -72,3 +71,44 @@ function infinite(){
     }, 3000);
 }
 infinite();
+*
+
+//scope chanins 
+var myname = "mahatmaGandhi"; //gobal
+
+function supperparrent() {
+  function parent() {
+    function superChild() {
+      function child() {
+      console.log(myname)
+      }
+      child();
+    }
+    superChild();
+  }
+  parent();
+}
+
+supperparrent();
+*/
+
+function h() {
+  if (true) {
+    var b = 8;
+  }
+  console.log(b);
+}
+console.log(b);
+h();
+function check() {
+  function go() {
+    function giveUp() {
+      console.log(b);
+      function roundUp() {}
+      roundUp();
+    }
+    giveUp();
+  }
+  go();
+}
+check();
