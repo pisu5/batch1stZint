@@ -151,41 +151,42 @@ public class reverseString {
          * }
          * System.out.println(ans);
          */
-        String d = "fhhhhkkkppp";
-        String g = compress(d);
-        System.out.println(g);
+        String s = "kkkkdsjjshssssiiiii";
+        reverseString r = new reverseString();
+        String h = r.compress(s);
+        System.out.println(h);
 
     }
 
-    public static String compress(String c) {
-        int count = 0;
-        String ans = "";
-        for (int i = 1; i <= c.length(); i++) {
-            char curre = c.charAt(i);
-            char pre = c.charAt(i - 1);
-            if (curre == pre) {
-                count++;
-            }else{
-                if (count > 1) {
-                    ans += count;
-                    
+    public String compress(String s) {
+        if (s.length() == 0) {
+            return "";
+        } else {
+            String ans = "";
+            int count = 0;
+            for (int i = 1; i < s.length(); i++) {
+                char pre = s.charAt(i - 1); // k
+                char current = s.charAt(i);// d
+                if (pre == current) {
+                    count++;
+                } else {
+                    if (count > 1) {
+                        ans += count;
+                    }
+                    ans += pre;
+                    count = 1;
 
                 }
-                ans += pre;
-                count =1;
-
-            }
-        }
-               
             }
             if (count > 1) {
                 ans += count;
 
             }
-            ans += c.charAt(c.length() - 1);
+            ans += s.charAt(s.length() - 1);
+            return ans;
 
-        }return ans;
+        }
 
-}
+    }
 
 }

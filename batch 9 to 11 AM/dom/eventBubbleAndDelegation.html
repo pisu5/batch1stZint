@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" id="con">
+      container
+      <div class="box" id="box">
+        box
+        <button id="btn">This is button</button>
+      </div>
+    </div>
+    <select name="" id="selectlist">
+      <option value="">hello</option>
+      <option value="">bybbye</option>
+      <option value="">hhh</option>
+      <option value="">ssldkvldrrb</option>
+    </select>
+
+    <script>
+        /*
+      const btn = document.getElementById("btn");
+      const con = document.getElementById("con");
+      const box = document.getElementById("box");
+      //event bubbling
+      /*
+      btn.addEventListener("click", function () {
+        console.log("Button clicked on button");
+      });
+      con.addEventListener("click", function () {
+        console.log(" clicked on container");
+      });
+      box.addEventListener("click", function () {
+        console.log("clicked on box");
+      });
+      
+      //event delegations
+      box.addEventListener("click", function (event) {
+        console.log("Button clicked");
+      });
+      */
+     let sele = document.getElementById("selectlist");
+     sele.addEventListener("change",function(event){
+        if(event.target===sele){
+            console.log(event.target.value+"Option click");
+        }
+     })
+
+    </script>
+  </body>
+</html>

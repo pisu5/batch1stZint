@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: antiquewhite;
+      }
+      .grid {
+        height: 100vh;
+        display: grid;
+        grid-template-rows: repeat(3, 100px);
+        grid-template-columns: repeat(3, 100px);
+        margin-bottom: 20px;
+        margin: auto;
+      }
+      .cell {
+        display: flex;
+        margin-top: 30%;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        cursor: pointer;
+        user-select: none;
+        font-size: 4rem;
+
+        width: 100px;
+        background-color: ivory;
+        border: 5px solid grey;
+      }
+      .cell:hover {
+        background-color: antiquewhite;
+      }
+      .btn {
+        position: relative;
+        bottom: 350px;
+        width: 300px;
+      }
+      .btn button {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div">
+      <h1>TicTacToe</h1>
+    </div>
+    <div class="grid">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+    </div>
+    <div class="btn">
+      <button class="btn2">Start</button>
+    </div>
+   <script src="./tic.js"></script>
+  </body>
+</html>
