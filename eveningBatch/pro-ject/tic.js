@@ -1,21 +1,32 @@
-let btn = document.querySelector("btn2");
+let btn = document.querySelector(".btn2");
 let cell = document.querySelectorAll(".cell");
 let turn = "X";
 let isTurn = true;
 let str = false;
+let isStart = false;
 
 for (let i = 0; i < cell.length; i++) {
   let j = cell[i];
 
   j.addEventListener("click", function () {
-    j.innerHTML = turn;
-    checkwinner();
-    if (isTurn) {
-      turn = "O";
-      isTurn = false;
+    if (!isStart) {
+      return;
+    }
+    if (j.innerHTML == "") {
+      j.innerHTML = turn;
+      setTimeout(() => {
+        checkwinner();
+      }, 1000);
+
+      if (isTurn) {
+        turn = "O";
+        isTurn = false;
+      } else {
+        turn = "X";
+        isTurn = true;
+      }
     } else {
-      turn = "X";
-      isTurn = true;
+      alert("already filled");
     }
   });
 }
@@ -77,5 +88,6 @@ function checkwinner() {
   }
 }
 btn.addEventListener("click", function () {
-  str = true;
+  isStart = true;
+  alert("game start");
 });
