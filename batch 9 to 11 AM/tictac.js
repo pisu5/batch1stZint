@@ -40,6 +40,7 @@ for (let i = 0; i < cell.length; i++) {
     }
   });
 }
+  //event delegations
 */ grid.addEventListener("click", function (event) {
   let currrCell = event.target;
   if (!isStart) {
@@ -47,20 +48,20 @@ for (let i = 0; i < cell.length; i++) {
     return;
   }
   if (currrCell.innerHTML == "") {
-    cellClick.play();
     currrCell.innerHTML = turn;
+    cellClick.play();
+    if (isTurn) {
+      turn = "y";
+
+      isTurn = false;
+    } else {
+      turn = "x";
+      isTurn = true;
+    }
   } else {
     wrongClick.play();
   }
 
-  if (isTurn) {
-    turn = "y";
-
-    isTurn = false;
-  } else {
-    turn = "x";
-    isTurn = true;
-  }
   let winner = checkWinner();
   if (winner == 1) {
     // alert(" X is winner");
