@@ -3,7 +3,16 @@ let cell = document.querySelectorAll(".cell");
 let startBtn = document.querySelector("#btn");
 let turn = "x";
 let isTurn = true;
-winnerGesture();
+let isStart = false;
+let startSound = new Audio("./gameSound/gamestart.mp3");
+let cellClick = new Audio("./gameSound/click12.aac");
+let tieSound = new Audio("./gameSound/tie.mp3");
+let wrongClick = new Audio("./gameSound/wrongclickTrimmed.wav");
+let vic = new Audio("./gameSound/vicAud.mp3");
+startBtn.addEventListener("click", function () {
+  startSound.play();
+  isStart = true;
+});
 /*
 //non-optimize way to handle click 
 
@@ -33,14 +42,20 @@ for (let i = 0; i < cell.length; i++) {
 }
 */ grid.addEventListener("click", function (event) {
   let currrCell = event.target;
+  if (!isStart) {
+    alert("first click on start button");
+    return;
+  }
   if (currrCell.innerHTML == "") {
+    cellClick.play();
     currrCell.innerHTML = turn;
   } else {
-    alert("Wroong turn");
+    wrongClick.play();
   }
 
   if (isTurn) {
     turn = "y";
+
     isTurn = false;
   } else {
     turn = "x";
@@ -48,13 +63,18 @@ for (let i = 0; i < cell.length; i++) {
   }
   let winner = checkWinner();
   if (winner == 1) {
-    alert(" X is winner");
-   
+    // alert(" X is winner");
+    vic.play();
+    winnerGesture();
 
     resetgrid();
   } else if (winner == 2) {
     alert("Y is winner");
+    vic.play();
+    winnerGesture();
     resetgrid();
+  } else if (winner == 0) {
+    alert("game is draw");
   }
 });
 
@@ -113,6 +133,20 @@ function checkWinner() {
       cell[6].innerHTML == "y")
   ) {
     return 2;
+  } else if (
+    cell[0].innerHTML != "" &&
+    cell[1].innerHTML != "" &&
+    cell[2].innerHTML != "" &&
+    cell[3].innerHTML != "" &&
+    cell[4].innerHTML != "" &&
+    cell[5].innerHTML != "" &&
+    cell[6].innerHTML != "" &&
+    cell[7].innerHTML != "" &&
+    cell[8].innerHTML != ""
+  ) {
+    tieSound.play();
+
+    return 0;
   }
 }
 function resetgrid() {
@@ -124,17 +158,28 @@ function resetgrid() {
 }
 
 function winnerGesture() {
-  let conatiner = document.querySelector("lottie");
- 
+  const container = document.querySelector(".lottie");
+  container.style.display = "block";
+  grid.style.display = "none";
+  setTimeout(() => {
+    restartgame();
+    container.style.display = "none";
+  }, 3000);
 
   const dotLottie = lottie.loadAnimation({
-    container: conatiner,
+    container: container,
     autoplay: true,
     loop: true,
-    renderer: "canvas",
+    renderer: "svg", // Use "svg" or "canvas" depending on your needs
     path: "./Animat1724468413277.json",
   });
   dotLottie.addEventListener("complete", function () {
-    conatiner.style.display = "none";
+    container.style.display = "none";
   });
+}
+
+function restartgame() {
+  isStart = true;
+  grid.style.display = "block";
+  location.reload();
 }
