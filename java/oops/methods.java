@@ -6,7 +6,7 @@ public class methods {
         // m.addMoney(30000);
         // m.sendMoney(10);
         // SmartPhoness oppo = new SmartPhoness();
-        // oppo.call("3233", false);
+        // oppo.call("99854614522",true);
         Animal dog = new Dog();
         dog.sleep();
         Animal lion = new Lion();
