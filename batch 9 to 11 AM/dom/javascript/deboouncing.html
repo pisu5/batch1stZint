@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Click to</button>
+    <script>
+      function debounce(func, deleay) {
+        let timeout;
+        return function (...nitin) {
+          if (timeout) {
+            clearTimeout(timeout);
+          }
+          timeout = setTimeout(() => {
+            func.apply(this, nitin);
+          }, deleay);
+        };
+      }
+      function fetchdata() {
+        console.log("Data ....");
+      }
+      const func = debounce(fetchdata, 3000);
+
+      document.querySelector("button").addEventListener("click", function () {
+        func(3000);
+      });
+    </script>
+  </body>
+</html>
