@@ -1,0 +1,26 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+header{
+  width: 90%;
+  display: flex;
+}
+.left h1{
+  vertical-align: middle;
+  font-weight: 700;
+  padding: 4px;
+  margin: 4px;
+}
+.right{
+  position: relative;
+  left: 70%;
+  float: right;
+
+}
+nav ul li{
+  display: inline-block;
+  padding: 8px;
+  margin: 2px;
+  font-weight: 800;
+}

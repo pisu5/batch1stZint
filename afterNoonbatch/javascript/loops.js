@@ -25,7 +25,23 @@ for (let i = 0; i <= 100; i++) {
 for (let i = 10; i >= 0; i--) {
   console.log(i);
 }
-  */
+  
+ for(let i =0;i<10;i++){
+  console.log(i);
+ }
+ 
+ for(let i =0;i<=10;i++){
+  console.log("Hello i am"+" "+i);
+ }
+ }
+   */
 
+//while loops
 
-
+let a = 1; //
+while (a <= 100) {
+ if(a%2==0){
+  console.log(a)
+ }
+  a++;
+}

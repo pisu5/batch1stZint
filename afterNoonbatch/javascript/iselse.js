@@ -41,7 +41,7 @@ if (mont == 2) {
 } else if (mont == 4) {
   console.log("aprail");
 }
-  */
+  
 let ram = 12;
 let ravi = 10;
 let shyam = 6;
@@ -56,3 +56,5 @@ if (ram < ravi) {
 } else if (shyam < ravi) {
   console.log("shyam is young");
 }
+  */
+ 
