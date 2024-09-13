@@ -1,24 +1,16 @@
 import React from "react";
 import "./App.css";
+
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <>
-      <header>
-        <div className="left">
-          <h1>My Logo</h1>
-        </div>
-        <div className="right">
-          <nav>
-            <ul>
-              <li></li>
-              <li>Home</li>
-              <li>Aboput</li>
-              <li>Progile</li>
-              <li>Account</li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <nav>
+        <Link to="/home">Home</Link>
+        <Link to="./he"></Link>
+        <Link to="/about">About</Link> 
+      </nav>
     </>
   );
 };
