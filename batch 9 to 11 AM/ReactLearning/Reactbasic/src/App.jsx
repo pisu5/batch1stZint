@@ -6,11 +6,13 @@ import HomePage from "./HomePage";
 import { BrowserRouter } from "react-router-dom";
 import Header from "./Header";
 import FormData from "../FormData";
+import ReVision from "./ReVision";
 
 function App() {
   return (
     <>
       <FormData />
+      <ReVision />
 
       <Header />
     </>

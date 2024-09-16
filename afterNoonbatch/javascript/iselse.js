@@ -57,4 +57,11 @@ if (ram < ravi) {
   console.log("shyam is young");
 }
   */
- 
+let weekNum = 3;
+if (weekNum == 1) {
+  console.log("Monday");
+} else if (weekNum == 2) {
+  console.log("tue");
+} else if (weekNum == 3) {
+  console.log("wednes");
+}
