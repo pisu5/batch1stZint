@@ -18,15 +18,19 @@ const SignUpsForm = () => {
   };
 
   const handleSubmit = () => {
+    console.log("clicked");
     e.preventDeafult();
     const id = Date.now().toString();
-    setUsers({ ...users, [id]: formdata });
+    setUsers({ ...formdata, id });
     setformdata({ name: " ", mail: " ", password: " " });
+  };
+  const showUsers = () => {
+    console.log("users"+formdata.name);
   };
   return (
     <>
       <div>
-        <form onSubmit="{handleSubmit}">
+        <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name">name</label>
             <input
@@ -35,6 +39,7 @@ const SignUpsForm = () => {
               value={formdata.name}
               onChange={handleChange}
             />
+            <h1>{formdata.name}</h1>
           </div>
           <div>
             <label htmlFor="mail">Email</label>
@@ -56,6 +61,7 @@ const SignUpsForm = () => {
           </div>
           <button type="submit">submit</button>
         </form>
+        <button onClick={showUsers}>Show all users</button>
       </div>
     </>
   );

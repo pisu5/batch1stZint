@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .sliders {
+        position: relative;
+        width: 500px;
+        overflow: hidden;
+        margin: auto;
+      }
+      .slide {
+        display: none;
+      }
+      .slide.active {
+        display: block;
+      }
+
+      .slide img {
+        width: auto;
+        height: 200px;
+      }
+      #next {
+        height: 50px;
+        color: whitesmoke;
+        background-color: red;
+      }
+      #pre {
+        height: 50px;
+        color: whitesmoke;
+        background-color: rgb(0, 38, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sliders">
+      <div class="slides">
+        <!--imag slide-->
+        <div class="slide active">
+          <img src="./curvvfront.webp" alt="image1" />
+        </div>
+        <div class="slide">
+          <img src="./netflix.jpg" alt="image2" />
+        </div>
+        <div class="slide">
+          <img src="./curvvfront.webp" alt="image3" />
+        </div>
+        <div class="slide">
+          <img src="./curvvfront.webp" alt="image4" />
+        </div>
+      </div>
+      <button onclick="nextSlide()" id="next">Next</button>
+      <button onclick="pre()" id="pre">previous</button>
+    </div>
+    <script>
+      let currentSlide = 0;
+
+      let slides = document.querySelectorAll(".slide");
+      function showSldie(index) {
+        slides.forEach((slide, i) => {
+          console.log(`${slide}${i}`);
+          slide.classList.remove("active");
+          if (i == index) {
+            slide.classList.add("active");
+          }
+        });
+      }
+
+      //next slide handle
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSldie(currentSlide);
+      }
+      function pre() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSldie(currentSlide);
+      }
+      showSldie(currentSlide);
+    </script>
+  </body>
+</html>

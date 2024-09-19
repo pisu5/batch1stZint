@@ -12,11 +12,10 @@ import SignUpsForm from "./SignUpsForm";
 function App() {
   return (
     <>
-      <FormData />
-      <ReVision />
+     
       <SignUpsForm/>
 
-      <Header />
+     
     </>
   );
 }
