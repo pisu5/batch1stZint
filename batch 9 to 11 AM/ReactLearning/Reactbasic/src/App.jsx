@@ -4,18 +4,17 @@ import Footer from "./Footer";
 import HomePage from "./HomePage";
 
 import { BrowserRouter } from "react-router-dom";
-import Header from "./Header";
+
 import FormData from "../FormData";
 import ReVision from "./ReVision";
 import SignUpsForm from "./SignUpsForm";
+import UseEffect from "./UseEffect";
+import Header from "./Header";
 
 function App() {
   return (
     <>
-     
-      <SignUpsForm/>
-
-     
+      <Header />
     </>
   );
 }
