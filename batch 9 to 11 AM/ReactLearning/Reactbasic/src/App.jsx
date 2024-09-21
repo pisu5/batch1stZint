@@ -10,11 +10,13 @@ import ReVision from "./ReVision";
 import SignUpsForm from "./SignUpsForm";
 import UseEffect from "./UseEffect";
 import Header from "./Header";
+import DarkLightMode from "./DarkLightMode";
+
 
 function App() {
   return (
     <>
-      <Header />
+      <DarkLightMode />
     </>
   );
 }

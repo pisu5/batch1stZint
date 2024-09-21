@@ -42,7 +42,7 @@ class OrderProcessor implements Runnable {
     public void run() {
         System.out.println("Order Procession for id : " + " " + order.getOrderId());
         try {
-            Thread.sleep(order.getProcessingTime() * 1000);
+           Thread.sleep(order.getProcessingTime());
         } catch (InterruptedException e) {
             System.out.println("order interuupted id is : " + " " + order.getOrderId());
 

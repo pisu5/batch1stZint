@@ -24,3 +24,12 @@ nav ul li{
   margin: 2px;
   font-weight: 800;
 }
+
+.lighMode {
+  color: black;
+  background-color: white;
+}
+.darkMode {
+  background-color: #3333;
+  color: #ffffff;
+}

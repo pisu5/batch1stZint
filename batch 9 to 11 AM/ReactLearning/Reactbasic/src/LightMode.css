@@ -1,0 +1,11 @@
+
+.lighMode {
+  color: black;
+  background-color: white;
+}
+.darkMode {
+  background-color: #3333;
+  color: #ffffff;
+}
+
+
