@@ -11,73 +11,87 @@ public class StockMarket {
         Scanner s = new Scanner(System.in);
         Market market = new Market();
         UserProfile usersProfile = new UserProfile("Chandu", 10000);
+
         while (true) {
-            market.fluctuatePrice(); // stock price
-            System.out.println("\nAvilable stocks");
+            market.fluctuatePrice(); // stock price fluctuation
+            System.out.println("\nAvailable stocks:");
             for (Stock stock : market.getStockPriceslist()) {
                 System.out.println(stock);
-
             }
+
             System.out.println(
-                    "1. Buy Stock\n2. Sell Stock\n3. Show Portfolio\n4. Exit \n5. Show balance \n6. Add fund ");
+                    "1. Buy Stock\n2. Sell Stock\n3. Show Portfolio\n4. Exit\n5. Show balance\n6. Add funds");
             System.out.print("Choose an option: ");
             int choice = s.nextInt();
+
             switch (choice) {
-                case 1:
-                    System.out.println("Enter the stock ticker"); //
+                case 1: // Buy stock
+                    System.out.println("Enter the stock ticker: ");
                     String ticker = s.next();
-                    System.out.println("Enter quantity");
-                    int qunt = s.nextInt();
-                    for (Stock stock : market.getStockPriceslist()) {
-                        // System.out.println(stock);
-                        if (stock.getTicker().equals(ticker)) {
-                            System.out.println("ticker match");
-                            usersProfile.buyStock(stock, qunt);
-                        } else {
-                            System.out.println("company does not exit in tyour portfolio");
-                        }
+                    System.out.println("Enter quantity: ");
+                    int quantity = s.nextInt();
 
+                    boolean stockFound = false;
+                    for (Stock stock : market.getStockPriceslist()) {
+                        if (stock.getTicker().equals(ticker)) {
+                            stockFound = true;
+                            usersProfile.buyStock(stock, quantity);
+                            break; // Stop checking after buying the stock
+                        }
+                    }
+                    if (!stockFound) {
+                        System.out.println("Stock not found in the market.");
                     }
                     break;
-                case 2:
-                    System.out.println("Enter the stock ticker");
+
+                case 2: // Sell stock
+                    System.out.println("Enter the stock ticker: ");
                     ticker = s.next();
-                    System.out.println("Enter quantity");
-                    int Sellqunttity = s.nextInt();
+                    System.out.println("Enter quantity: ");
+                    int sellQuantity = s.nextInt();
+
+                    stockFound = false;
                     for (Stock stock : market.getStockPriceslist()) {
                         if (stock.getTicker().equals(ticker)) {
-                            usersProfile.sellStock(stock, Sellqunttity);
+                            stockFound = true;
+                            usersProfile.sellStock(stock, sellQuantity);
+                            break; // Stop checking after selling the stock
                         }
-
+                    }
+                    if (!stockFound) {
+                        System.out.println("Stock not found in your portfolio.");
                     }
                     break;
 
-                case 3:
+                case 3: // Show portfolio
                     usersProfile.showPortfolio();
                     break;
-                case 5:
-                    double b = usersProfile.getBalance();
-                    System.out.println(b);
-                case 6:
-                    System.out.println("Please enter fund that you want to add");
-                    double fund = s.nextDouble();
-                    usersProfile.setbalance(fund);
 
-                case 4:
+                case 4: // Exit
                     System.out.println("Exiting...");
                     s.close();
                     return;
-                default:
-                    System.out.println("Invalid choice");
 
+                case 5: // Show balance
+                    System.out.printf("Your current balance is: $%.2f\n", usersProfile.getBalance());
+                    break;
+
+                case 6: // Add funds
+                    System.out.println("Enter the amount to add: ");
+                    double fund = s.nextDouble();
+                    usersProfile.addFunds(fund);
+                    System.out.printf("Funds added! New balance: $%.2f\n", usersProfile.getBalance());
+                    break;
+
+                default:
+                    System.out.println("Invalid choice.");
             }
         }
-
     }
-
 }
 
-public class Stock {
+// Stock class
+class Stock {
     private String ticker;
     private String name;
     private double price;
@@ -110,7 +124,8 @@ public class Stock {
     }
 }
 
-public class UserProfile {
+// UserProfile class
+class UserProfile {
     private String name;
     private double balance;
     private HashMap<String, Integer> portfolio; // stock ticker -> quantity
@@ -121,9 +136,8 @@ public class UserProfile {
         this.portfolio = new HashMap<>();
     }
 
-    public void setbalance(double fund) {
-        balance = fund;
-       
+    public void addFunds(double fund) {
+        balance += fund; // Add funds to the balance
     }
 
     public String getName() {
@@ -147,8 +161,9 @@ public class UserProfile {
     }
 
     public void sellStock(Stock stock, int quantity) {
-        if (portfolio.getOrDefault(stock.getTicker(), 0) >= quantity) {
-            portfolio.put(stock.getTicker(), portfolio.get(stock.getTicker()) - quantity);
+        int currentQuantity = portfolio.getOrDefault(stock.getTicker(), 0);
+        if (currentQuantity >= quantity) {
+            portfolio.put(stock.getTicker(), currentQuantity - quantity);
             double totalEarnings = stock.getPrice() * quantity;
             balance += totalEarnings;
             System.out.printf("Sold %d shares of %s for $%.2f each.\n", quantity, stock.getTicker(), stock.getPrice());
@@ -164,14 +179,9 @@ public class UserProfile {
         });
         System.out.printf("Balance: $%.2f\n", balance);
     }
-
 }
 
-    
-   
-  
-
-
+// Market class
 class Market {
     private List<Stock> stocks;
     private Random random;
@@ -179,23 +189,21 @@ class Market {
     public Market() {
         stocks = new ArrayList<>();
         random = new Random();
-        initilizeStcok();
+        initializeStock();
     }
 
-    public void initilizeStcok() {
-        stocks.add(new Stock("Apple.inc", "Apple", 20000));
-        stocks.add(new Stock("Releiance.ltd", "Releiance", 2000));
-        stocks.add(new Stock("tata.inc", "tata", 200));
-        stocks.add(new Stock("adani.pow", "adani", 20));
-
+    public void initializeStock() {
+        stocks.add(new Stock("AAPL", "Apple", 150));
+        stocks.add(new Stock("RELI", "Reliance", 2000));
+        stocks.add(new Stock("TATA", "Tata", 500));
+        stocks.add(new Stock("ADAN", "Adani", 100));
     }
 
     public void fluctuatePrice() {
         for (Stock stock : stocks) {
-            double change = (random.nextDouble() - 0.5) * 10; // -5 to 5
-            stock.setPrice((Math.max(1.0, stock.getPrice() + change)));
+            double change = (random.nextDouble() - 0.5) * 10; // Fluctuate price between -5 to +5
+            stock.setPrice(Math.max(1.0, stock.getPrice() + change)); // Ensure price doesn't go below 1
         }
-
     }
 
     public List<Stock> getStockPriceslist() {
