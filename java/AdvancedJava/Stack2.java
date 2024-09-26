@@ -40,4 +40,30 @@ public class Stack2 {
         System.out.println(ans);
        
     }
+//valid parenthsis
+    public boolean isValid(String s) {
+        Stack<Character> sb = new Stack<>();
+        for(int i =0;i<s.length();i++){
+            char c = s.charAt(i);
+            if(c=='(' || c=='{' || c=='['){
+                sb.push(c);
+
+            }else if(c==')'&& sb.size()>0&& sb.peek()=='('){
+                sb.pop();
+            }else if(c=='}'&& sb.size()>0&& sb.peek()=='{'){
+                sb.pop();
+            }else if(c==']'&& sb.size()>0&& sb.peek()=='['){
+                sb.pop();
+            }else{
+                return false;
+            }
+        }
+        if(sb.size()==0){
+            return true;
+        }else{
+            return false;
+        }
+
+        
+    }
 }
