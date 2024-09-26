@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class StockMarket {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner s = new Scanner(System.in);
         Market market = new Market();
         UserProfile usersProfile = new UserProfile("Chandu", 10000);
@@ -148,11 +148,13 @@ class UserProfile {
         return balance;
     }
 
-    public void buyStock(Stock stock, int quantity) {
+    public void buyStock(Stock stock, int quantity) throws InterruptedException {
         double totalCost = stock.getPrice() * quantity;
         if (totalCost <= balance) {
             balance -= totalCost;
             portfolio.put(stock.getTicker(), portfolio.getOrDefault(stock.getTicker(), 0) + quantity);
+            System.out.println("please wait...");
+            Thread.sleep(3000);
             System.out.printf("Bought %d shares of %s for $%.2f each.\n", quantity, stock.getTicker(),
                     stock.getPrice());
         } else {
@@ -160,12 +162,14 @@ class UserProfile {
         }
     }
 
-    public void sellStock(Stock stock, int quantity) {
+    public void sellStock(Stock stock, int quantity) throws InterruptedException {
         int currentQuantity = portfolio.getOrDefault(stock.getTicker(), 0);
         if (currentQuantity >= quantity) {
             portfolio.put(stock.getTicker(), currentQuantity - quantity);
             double totalEarnings = stock.getPrice() * quantity;
             balance += totalEarnings;
+            System.out.println("please wait....");
+            Thread.sleep(3000);
             System.out.printf("Sold %d shares of %s for $%.2f each.\n", quantity, stock.getTicker(), stock.getPrice());
         } else {
             System.out.println("You don't own enough shares to sell.");
@@ -177,6 +181,7 @@ class UserProfile {
         portfolio.forEach((ticker, quantity) -> {
             System.out.printf("%s: %d shares\n", ticker, quantity);
         });
+        
         System.out.printf("Balance: $%.2f\n", balance);
     }
 }
