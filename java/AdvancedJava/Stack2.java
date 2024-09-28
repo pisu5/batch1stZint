@@ -4,8 +4,12 @@ public class Stack2 {
     public static void main(String[] args) {
         // Stack<Integer> stack = new Stack<>();
         // Stack2.addElementInStack(stack);
-        String s = "Vampire Diaries";
-        Stack2.reverseStringWithStack(s);
+        // String s = "Vampire Diaries";
+        // Stack2.reverseStringWithStack(s);
+        String str1 = "(a+b+((a-b)))";
+        String str2 = "(a+b+(a-b))";
+        boolean t = Stack2.checkRedunnt(str1);
+        System.out.println(t);
 
     }
 
@@ -26,44 +30,64 @@ public class Stack2 {
     }
 
     public static void reverseStringWithStack(String s) {
-       StringBuilder ans = new StringBuilder();
+        StringBuilder ans = new StringBuilder();
         Stack<Character> ch = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             ch.push(c);
         }
         while (!ch.isEmpty()) {
-           
-           
-           ans.append(ch.pop());
+
+            ans.append(ch.pop());
         }
         System.out.println(ans);
-       
+
     }
-//valid parenthsis
+
+    // valid parenthsis
     public boolean isValid(String s) {
         Stack<Character> sb = new Stack<>();
-        for(int i =0;i<s.length();i++){
+        for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if(c=='(' || c=='{' || c=='['){
+            if (c == '(' || c == '{' || c == '[') {
                 sb.push(c);
 
-            }else if(c==')'&& sb.size()>0&& sb.peek()=='('){
+            } else if (c == ')' && sb.size() > 0 && sb.peek() == '(') {
                 sb.pop();
-            }else if(c=='}'&& sb.size()>0&& sb.peek()=='{'){
+            } else if (c == '}' && sb.size() > 0 && sb.peek() == '{') {
                 sb.pop();
-            }else if(c==']'&& sb.size()>0&& sb.peek()=='['){
+            } else if (c == ']' && sb.size() > 0 && sb.peek() == '[') {
                 sb.pop();
-            }else{
+            } else {
                 return false;
             }
         }
-        if(sb.size()==0){
+        if (sb.size() == 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
 
-        
+    }
+
+    public static boolean checkRedunnt(String str) {
+        Stack<Character> st = new Stack<>();
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
+            if (ch == ')' && st.peek() == '(') {
+                return false;
+            } else if (ch == ')') {
+                while (st.peek() != '(') {
+                    st.pop();
+                }
+                st.pop();
+            } else {
+                st.push(ch);
+            }
+        }
+
+        return true;
     }
 }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .div {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        column-gap: 12px;
+      }
+      .container {
+        border: 4px solid crimson;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        column-gap: 12px;
+      }
+      .circle {
+        margin: 4px;
+        border: 1px solid blueviolet;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+      }
+      .square {
+        border: 1px solid blueviolet;
+        margin: 4px;
+        height: 100px;
+        width: 100px;
+      }
+      .cone {
+        border: 1px solid blueviolet;
+        margin: 4px;
+        height: 200px;
+        width: 100px;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+      }
+      .shapeContainer {
+        column-gap: 5px;
+        display: flex;
+        justify-content: center;
+        border: 2px solid crimson;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div">
+      <h1>Auto Shape Generator</h1>
+      <div class="container">
+        <label for="number">Enter Number That you want generate shape</label>
+        <input name="number" id="number" type="number" />
+        <label for="color">Choose Color</label>
+        <input id="color" name="color" type="color" />
+        <label for="shape"></label>
+        <select name="shape" id="shape">
+          <option value="circle">circle</option>
+          <option value="square">square</option>
+          <option value="cone">cone</option>
+        </select>
+        <button>Create Shape</button>
+      </div>
+    </div>
+    <div class="shapeContainer"></div>
+    <script>
+      let numInput = document.querySelector("#number");
+      let colInput = document.querySelector("#color");
+      let selectInput = document.querySelector("select");
+      let btn = document.querySelector("button");
+      let sc = document.querySelector(".shapeContainer");
+      //
+      btn.addEventListener("click", function () {
+        for (let i = 0; i <= numInput.value; i++) {
+          let div = document.createElement("div");
+          if (selectInput.value == "circle") {
+            div.classList.add("circle");
+          } else if (selectInput.value == "square") {
+            div.classList.add("square");
+          } else {
+            div.classList.add("cone");
+          }
+          div.style.backgroundColor = colInput.value;
+
+          sc.appendChild(div);
+        }
+      });
+    </script>
+  </body>
+</html>

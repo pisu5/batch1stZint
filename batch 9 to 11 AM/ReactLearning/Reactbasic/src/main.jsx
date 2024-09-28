@@ -7,6 +7,7 @@ import Header from "./Header";
 import Footer from "./Footer.jsx";
 import HomePage from "./HomePage.jsx";
 import UseEffect from "./UseEffect.jsx";
+import "./index.css";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
