@@ -39,13 +39,30 @@ public class basic {
          * 
          */
         // que 1 control flow start
-        int number = 7;
-        if (number % 2 == 0) {
-            System.out.println("given num is even");
-
-        } else {
-            System.out.println("num is odd");
-        }
+        /*
+         * int number = 7;
+         * if (number % 2 == 0) {
+         * System.out.println("given num is even");
+         * 
+         * } else {
+         * System.out.println("num is odd");
+         * }
+         * // que 2
+         * int num = 4;
+         * if (num < 0) {
+         * System.out.println("num is negative");
+         * } else {
+         * System.out.println("num is positive");
+         * }
+         * 
+         * int age = 34;
+         * if(age<18){
+         * System.out.println("not eligible to give vote");
+         * }else{
+         * System.out.println("eligible to give vote");
+         * }
+         * 
+         */
 
     }
 
