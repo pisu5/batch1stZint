@@ -62,7 +62,20 @@ public class basic {
          * System.out.println("eligible to give vote");
          * }
          * 
+         * int m = 2;
+         * int n = 2;
+         * int p = (m++ * ++n) + (++m * n++);
+         * System.out.println("m: " + m + ", n: " + n + ", p: " + p);
+         * 
+         * int x = 1, y = 1, z = 1;
+         * int result = x++ + ++x * y++ + y++ * ++z + z++;
+         * System.out.println("x: " + x + ", y: " + y + ", z: " + z + ", result: " +
+         * result);
          */
+
+        int a = 5;
+        int b = a++ + ++a * a++ + ++a;
+        System.out.println("a: " + a + ", b: " + b);
 
     }
 

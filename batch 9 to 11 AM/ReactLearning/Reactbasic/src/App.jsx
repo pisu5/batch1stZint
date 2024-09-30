@@ -14,12 +14,11 @@ import DarkLightMode from "./DarkLightMode";
 import Basic from "./tailwindMaterials/Basic";
 import Header from "./tailwindMaterials/Header";
 
+
 function App() {
   return (
     <>
-      <Basic />
-      <h1 className="text-3xl font-bold underline">Hello wodvrld!</h1>
-      <Header />
+    
     </>
   );
 }
