@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1, initial-scale=1.0" />
+    <title>My To-Do List</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        border: 4px solid burlywood;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .task {
+        position: relative;
+        left: 30%;
+        align-items: center;
+        width: 40%;
+        border: 3px solid gray;
+        display: flex;
+        justify-content: center;
+        column-gap: 7px;
+      }
+      .task ul {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>My NEw To-Do</h1>
+      <input type="text" />
+      <button>Add todo</button>
+    </div>
+    <div class="task">
+      <ul>
+        <h1>Todo's</h1>
+        <!--Dynamixcally add via javascript-->
+      </ul>
+    </div>
+
+    <script>
+      let input = document.querySelector("input");
+      let btn = document.querySelector("button");
+      let ul = document.querySelector("ul");
+
+      btn.addEventListener("click", addTaskInList);
+
+      //create function
+      function addTaskInList() {
+        //create element
+        let valueInput = input.value;
+        if (valueInput.trim() == "") {
+          alert("input is emprty , enter task");
+          return;
+        }
+        let li = document.createElement("li");
+        //append value in html element
+        li.innerText = valueInput;
+        ul.appendChild(li);
+        alert("Taskk added successfully");
+        //clear input field after append in list
+        input.value = "";
+      }
+    </script>
+  </body>
+</html>

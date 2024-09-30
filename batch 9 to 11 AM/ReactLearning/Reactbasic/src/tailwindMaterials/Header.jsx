@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLightMode, setMode] = useState(true);
-  return (
+  return (                                      
     <>
       <header className="bg-blue-600 w-full">
         <div>

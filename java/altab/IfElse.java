@@ -48,19 +48,103 @@ public class IfElse {
          * } else if (ch == 'E') {
          * System.out.println("vowel");
          * }
+         * // que 2
+         * System.out.println("Enter character");
+         * char ch = 'g';
+         * if (ch > 'A' && ch <= 'Z') {
+         * System.out.println("Given letter is capital");
+         * 
+         * } else if (ch > 'a' && ch <= 'z') {
+         * 
+         * System.out.println("Given letter is smaller");
+         * 
+         * }else{
+         * System.out.println("invalid");
+         * }
+         * // que 3
+         * int sideA = sc.nextInt();
+         * int sideB = sc.nextInt();
+         * int sideC = sc.nextInt();
+         * 
+         * // store sum
+         * int sum = sideA + sideB + sideC;
+         * if (sum == 180) {
+         * System.out.println("Trinagle is valid");
+         * } else {
+         * System.out.println("Triangle is not valid");
+         * }
+         * //que 5
+         * System.out.println("enter month num");
+         * int monthNum = sc.nextInt();
+         * if(monthNum==1){
+         * System.out.println("jan");
+         * }else if(monthNum==2){
+         * System.out.println("feb");
+         * }else if(monthNum==3){
+         * System.out.println("march");
+         * }
+         * 
+         * // que 6
+         * int a = sc.nextInt();
+         * int b = sc.nextInt();
+         * int c = sc.nextInt();
+         * if (a == b) { // outer if
+         * if (b == c) { // inner if
+         * System.out.println("Equalilateral triangle");
+         * 
+         * } else {
+         * System.out.println("Isocles triangle");
+         * 
+         * }
+         * } else if (b == c || c == a) {
+         * System.out.println("isocles triangle");
+         * } else {
+         * System.out.println("scelene");
+         * }
+         * 
+         * // que 7
+         * int physics = sc.nextInt();
+         * int chemistery = sc.nextInt();
+         * 
+         * int math = sc.nextInt();
+         * 
+         * int bio = sc.nextInt();
+         * 
+         * int computer = sc.nextInt();
+         * 
+         * int sum = physics + chemistery + math + bio + computer;
+         * 
+         * int percentage = sum / 5;
+         * if(percentage>=90){
+         * System.out.println("Grade a");
+         * }else if(percentage>=80){
+         * System.out.println("grade b");
+         * }else if(percentage>=70){
+         * System.out.println("grade c");
+         * }else if(percentage>60){
+         * System.out.println("grade d");
+         * }else if(percentage>=40){
+         * System.out.println("grade e");
+         * }else{
+         * System.out.println("you are failed");
+         * }
+         * 
          */
-        // que 2
-        System.out.println("Enter character");
-        char ch = 'g';
-        if (ch > 'A' && ch <= 'Z') {
-            System.out.println("Given letter is capital");
+        //que 8
+        int ajay = sc.nextInt();
+        int ram = sc.nextInt();
+        int shyam = sc.nextInt();
+        if (ajay < ram) {
+            if (ajay < shyam) {
+                System.out.println("ajay is yougest boy");
+            } else {
+                System.out.println("Shyam is younhgest");
+            }
+        } else if (ram < shyam) {
+            System.out.println("ram is youngest");
+        } else {
+            System.out.println("Shyam is youngest");
 
-        } else if (ch > 'a' && ch <= 'z') {
-
-            System.out.println("Given letter is smaller");
-
-        }else{
-            System.out.println("invalid");
         }
 
     }
