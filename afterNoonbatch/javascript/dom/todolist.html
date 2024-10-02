@@ -29,6 +29,9 @@
       .task ul {
         list-style: none;
       }
+      button {
+        margin: 10px;
+      }
     </style>
   </head>
   <body>
@@ -49,6 +52,12 @@
       let btn = document.querySelector("button");
       let ul = document.querySelector("ul");
 
+      let update = document.createElement("button");
+      update.innerText = "Update";
+
+      let dlt = document.createElement("button");
+      dlt.innerText = "Delete";
+
       btn.addEventListener("click", addTaskInList);
 
       //create function
@@ -63,6 +72,29 @@
         //append value in html element
         li.innerText = valueInput;
         ul.appendChild(li);
+        update = document.createElement("button");
+        update.innerText = "Update";
+        li.appendChild(update);
+        //update button
+        update.addEventListener("click", function () {
+          if (input.value.trim() == "") {
+            alert("first add something");
+            return;
+          }
+          li.innerText = input.value;
+
+          li.appendChild(update);
+          dlt.style.margin = "10px";
+          li.appendChild(dlt);
+        });
+
+        dlt = document.createElement("button");
+        dlt.innerText = "Delete";
+        li.appendChild(dlt);
+        dlt.addEventListener("click", function () {
+          ul.removeChild(li);
+        });
+
         alert("Taskk added successfully");
         //clear input field after append in list
         input.value = "";
