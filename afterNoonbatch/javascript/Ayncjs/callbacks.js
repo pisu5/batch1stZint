@@ -31,8 +31,14 @@ console.log("end");
 
 */
 
-for (let i = 1; i <= 10; i++) {
+function greet(nitin) {
+  console.log("function excute after timeout , wait");
   setTimeout(() => {
-    console.log(i);
+    nitin();
   }, 3000);
 }
+
+function data() {
+  console.log("i am called from data function");
+}
+greet(data);

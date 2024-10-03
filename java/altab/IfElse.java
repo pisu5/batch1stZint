@@ -129,23 +129,91 @@ public class IfElse {
          * System.out.println("you are failed");
          * }
          * 
+         * //que 8
+         * int ajay = sc.nextInt();
+         * int ram = sc.nextInt();
+         * int shyam = sc.nextInt();
+         * if (ajay < ram) {
+         * if (ajay < shyam) {
+         * System.out.println("ajay is yougest boy");
+         * } else {
+         * System.out.println("Shyam is younhgest");
+         * }
+         * } else if (ram < shyam) {
+         * System.out.println("ram is youngest");
+         * } else {
+         * System.out.println("Shyam is youngest");
+         * 
+         * }
+         * //que 10
+         * int n = sc.nextInt();
+         * if(n%5==0){
+         * System.out.println("yes ");
+         * }else{
+         * System.out.println("No");
+         * }
+         * //que 13
+         * int n = 10;
+         * int sum = (n*(n+1)/2);
+         * System.out.println(sum);
+         * //que 14
+         * char ch = 'e';
+         * if(ch>='a'&&ch<='z'|| ch>='A' && ch<='Z' ){
+         * System.out.println("Character is alphabet");
+         * }else{
+         * System.out.println("not");
+         * }
+         * 
+         * // que 15
+         * 
+         * int age = 34;
+         * char gender = 'm';
+         * boolean isMarried = true;
+         * if (isMarried) {
+         * System.out.println("Congratulations , You re hired");
+         * } else if (gender == 'm' && age > 30) {
+         * System.out.println("Congratulations , You re hired");
+         * 
+         * } else if (gender == 'f' && age > 25) {
+         * System.out.println("Congratulations , You re hired");
+         * 
+         * }else{
+         * System.out.println("you are not hired");
+         * }
+         * 
+         * // que 17
+         * int length = 3;
+         * int breadth = 5;
+         * int area = length * breadth;
+         * int permimeter = 2 * (length + breadth);
+         * if (area > permimeter) {
+         * System.out.println("area is greater than perimeter");
+         * } else {
+         * System.out.println("Perameter is greater than area");
+         * }
+         * 
          */
-        //que 8
-        int ajay = sc.nextInt();
-        int ram = sc.nextInt();
-        int shyam = sc.nextInt();
-        if (ajay < ram) {
-            if (ajay < shyam) {
-                System.out.println("ajay is yougest boy");
-            } else {
-                System.out.println("Shyam is younhgest");
-            }
-        } else if (ram < shyam) {
-            System.out.println("ram is youngest");
-        } else {
-            System.out.println("Shyam is youngest");
 
+        // que 17
+        int hardnes = 50;
+        double carbon = 0.6;
+        int tensile = 56050;
+        int grade = 0;
+        if (hardnes > 50 && carbon < 0.7 && tensile > 5600) {
+            grade = 10;
+
+        }else if(hardnes>50&&carbon<0.7){
+            grade = 9;
+        }else if(hardnes>50&&tensile>5600){
+            grade = 7;
+        }else if(carbon<0.7&&tensile>5600){
+            grade = 8;
+        }else if(hardnes > 50  || carbon < 0.7|| tensile > 5600){
+            grade = 6;
+        }else{
+            grade =5;
         }
+        System.out.println(grade);
 
     }
 
