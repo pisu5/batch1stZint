@@ -37,8 +37,8 @@
   <body>
     <div class="container">
       <h1>My NEw To-Do</h1>
-      <input id="text" type="text" />
-      <input id="time" type="time" />
+      <input id="text" type="text" placeholder="Enter todo" />
+      <input id="time" type="time" placeholder="choose time" />
       <button>Add todo</button>
     </div>
     <div class="task">
@@ -47,11 +47,18 @@
         <!--Dynamixcally add via javascript-->
       </ul>
     </div>
+    <audio
+      id="audio"
+      src="./twirling-intime-lenovo-k8-note-alarm-tone-41440.mp3"
+      preload="auto"
+    ></audio>
 
     <script>
-      let input = document.querySelector("input");
+      let input = document.querySelector("#text");
+      let time = document.querySelector("#time");
       let btn = document.querySelector("button");
       let ul = document.querySelector("ul");
+      let audio = document.querySelector("#audio");
 
       let update = document.createElement("button");
       update.innerText = "Update";
@@ -65,6 +72,7 @@
       function addTaskInList() {
         //create element
         let valueInput = input.value;
+        let timeValue = time.value;
         if (valueInput.trim() == "") {
           alert("input is emprty , enter task");
           return;
@@ -76,6 +84,27 @@
         update = document.createElement("button");
         update.innerText = "Update";
         li.appendChild(update);
+        //check if input not blanlk
+        if (timeValue) {
+          let now = new Date();
+          let alarmdate = new Date(
+            now.getFullYear(),
+            now.getMonth(),
+            now.getDate(),
+            timeValue.split(":")[0],
+            timeValue.split(":")[1]
+          );
+          //calculate delay
+          let delay = alarmdate - now;
+          if (delay < 0) {
+            alarmdate.setDate(alarmdate.getDate() + 1); //set for the next day
+            delay = alarmdate - now;
+          }
+
+          setTimeout(() => {
+            audio.play();
+          }, delay);
+        }
         //update button
         update.addEventListener("click", function () {
           if (input.value.trim() == "") {
