@@ -30,6 +30,9 @@
         list-style: none;
       }
       button {
+        background-color: blue;
+      }
+      button {
         margin: 10px;
       }
     </style>
@@ -60,13 +63,37 @@
       let ul = document.querySelector("ul");
       let audio = document.querySelector("#audio");
 
-      let update = document.createElement("button");
-      update.innerText = "Update";
-
-      let dlt = document.createElement("button");
-      dlt.innerText = "Delete";
-
       btn.addEventListener("click", addTaskInList);
+
+      function todoSeprate(taskLis, taskValue, alaramDeley) {
+        const updateButton = document.createElement("button");
+        updateButton.innerText = "Update";
+        taskLis.appendChild(updateButton);
+
+        //delete btn
+
+        let dlt = document.createElement("button");
+        console.log(dlt);
+        dlt.innerText = "Delete";
+        taskLis.appendChild(dlt);
+
+        //update button
+        updateButton.addEventListener("click", function () {
+          let updateVal = prompt("update Your task", taskValue);
+          if (updateVal && updateVal.trim() !== "") {
+            taskLis.childNodes[0].textContent = updateVal;
+            taskValue = updateVal;
+          } else {
+            alert("update value cannot be emprty");
+          }
+        });
+
+        //delete btn
+        dlt.addEventListener("click", function () {
+          ul.removeChild(taskLis);
+          clearTimeout(alaramDeley);
+        });
+      }
 
       //create function
       function addTaskInList() {
@@ -81,11 +108,10 @@
         //append value in html element
         li.innerText = valueInput;
         ul.appendChild(li);
-        update = document.createElement("button");
-        update.innerText = "Update";
-        li.appendChild(update);
+
         //check if input not blanlk
         if (timeValue) {
+          console.log("time true");
           let now = new Date();
           let alarmdate = new Date(
             now.getFullYear(),
@@ -101,29 +127,12 @@
             delay = alarmdate - now;
           }
 
-          setTimeout(() => {
+          const alaramdeley = setTimeout(() => {
             audio.play();
           }, delay);
+          todoSeprate(li, valueInput, alaramdeley);
+          console.log("kndgnr");
         }
-        //update button
-        update.addEventListener("click", function () {
-          if (input.value.trim() == "") {
-            alert("first add something");
-            return;
-          }
-          li.innerText = input.value;
-
-          li.appendChild(update);
-          dlt.style.margin = "10px";
-          li.appendChild(dlt);
-        });
-
-        dlt = document.createElement("button");
-        dlt.innerText = "Delete";
-        li.appendChild(dlt);
-        dlt.addEventListener("click", function () {
-          ul.removeChild(li);
-        });
 
         alert("Taskk added successfully");
         //clear input field after append in list
