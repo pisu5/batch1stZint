@@ -64,7 +64,8 @@ function servePastea() {
     }, 3000);
   });
 }
-
+//useing callbacks and promises
+/*
 boilWater()
   .then((result) => {
     console.log(result);
@@ -85,3 +86,11 @@ boilWater()
   .catch((error) => {
     console.log(error);
   });
+  */
+async function cookPastea() {
+  const waterResult = await boilWater();
+  console.log(waterResult);
+
+  const addpasta = await addPastea();
+  console.log(waterResult);
+}

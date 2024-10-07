@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .circle {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+      }
+      .square {
+        height: 100px;
+        width: 100px;
+      }
+      .container {
+        display: flex;
+        column-gap: 8px;
+        border: 2px solid burlywood;
+        border-radius: 10px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <input id="num" type="number" />
+    <input id="col" type="color" />
+    <select name="shape" id="shape">
+      <option value="circle">circle</option>
+      <option value="square">square</option>
+    </select>
+    <button>Generate</button>
+    <div class="container"></div>
+    <script src="./revise.js"></script>
+  </body>
+</html>
