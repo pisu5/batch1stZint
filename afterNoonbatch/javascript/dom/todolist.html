@@ -29,11 +29,13 @@
       .task ul {
         list-style: none;
       }
-      button {
-        background-color: blue;
-      }
+
       button {
         margin: 10px;
+      }
+      #dlt2 {
+        background-color: red;
+        color: white;
       }
     </style>
   </head>
@@ -43,6 +45,7 @@
       <input id="text" type="text" placeholder="Enter todo" />
       <input id="time" type="time" placeholder="choose time" />
       <button>Add todo</button>
+      <button id="dlt2">Delete All</button>
     </div>
     <div class="task">
       <ul>
@@ -79,7 +82,7 @@
 
         //update button
         updateButton.addEventListener("click", function () {
-          let updateVal = prompt("update Your task", taskValue);
+          let updateVal = prompt("update Your task", taskValue); //update using promt
           if (updateVal && updateVal.trim() !== "") {
             taskLis.childNodes[0].textContent = updateVal;
             taskValue = updateVal;
@@ -137,6 +140,12 @@
         alert("Taskk added successfully");
         //clear input field after append in list
         input.value = "";
+      }
+document.querySelector("#dlt2").addEventListener("click",deleteAll);
+      function deleteAll() {
+       while(ul.firstChild){
+        ul.removeChild(ul.firstChild)
+       }
       }
     </script>
   </body>
