@@ -37,13 +37,13 @@ function shapeGenerator() {
 
     div.style.backgroundColor = colValue;
     div.style.borderRadius = "10px";
-    div.setAttribute("contenteditable","true")
-    div.style.color = "red"
+    div.setAttribute("contenteditable", "true");
+    div.style.color = "red";
     con.appendChild(div);
 
     //add listener
-    div.addEventListener("dblclick",function(){
-        div.remove();
-    })
+    div.addEventListener("dblclick", function () {
+      div.remove();
+    });
   }
 }

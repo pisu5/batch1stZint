@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+      }
+      .grid {
+        margin: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+      }
+      .gc {
+        display: flex;
+        flex-direction: column;
+        column-gap: 10px;
+      }
+      button {
+        width: 300px;
+      }
+      .cell {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: antiquewhite;
+        cursor: pointer;
+        color: red;
+        border: 1px solid burlywood;
+        font-size: 3rem;
+      }
+      .cell:hover {
+        background-color: cadetblue;
+      }
+
+      .cell:nth-child(1),
+      .cell:nth-child(2),
+      .cell:nth-child(3) {
+        border-top: none;
+      }
+      .cell:nth-child(1),
+      .cell:nth-child(4),
+      .cell:nth-child(7) {
+        border-left: none;
+      }
+
+      .cell:nth-child(3),
+      .cell:nth-child(6),
+      .cell:nth-child(9) {
+        border-right: none;
+      }
+      .cell:nth-child(7),
+      .cell:nth-child(8),
+      .cell:nth-child(9) {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="gc">
+        <div class="grid">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+
+        <button>Start</button>
+      </div>
+
+      <div class="game-Statement">
+        <h1>Game Statements</h1>
+
+        <h2 id="showMove"></h2>
+      </div>
+    </div>
+
+    <script src="./tictactoe.js"></script>
+  </body>
+</html>
