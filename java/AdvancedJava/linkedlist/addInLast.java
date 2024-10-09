@@ -5,7 +5,12 @@ public class addInLast {
         LinkedListttt list = new LinkedListttt();
         list.addNodeAtLast(45);
         list.addNodeAtLast(55);
-        list.disply();
+        list.addNodeAtLast(35454);
+       // list.removeFirst();
+       // list.disply();
+
+       int first = list.getFirst();
+       System.out.println(first);
 
     }
 
@@ -49,7 +54,45 @@ class LinkedListttt {
             temp = temp.next;
         }
         System.out.println("null");
-        
+
+    }
+
+    public void removeFirst() {
+        if (head == null) {
+            System.out.println("List is empty");
+        } else {
+            head = head.next;
+            System.out.println("First node remove");
+        }
+    }
+
+    public void removeLastNode() {
+        if (head == null) {
+            System.out.println("list empty");
+        } else if (head.next == null) {
+            head = null;
+            System.out.println("last node removed");
+
+        } else {
+            Node tempn = head;
+            // traverse list to find last node
+            while (tempn.next != null) {
+                tempn = tempn.next;
+
+            }
+            tempn.next = null;
+            System.out.println("last node removed");
+
+        }
+    }
+
+    public int getFirst(){
+        if(head==null){
+            System.out.println("list is empty");
+            return -1;
+        }else{
+            return head.data;
+        }
     }
 
 }

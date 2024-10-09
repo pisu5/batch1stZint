@@ -5,8 +5,17 @@ let value = "X";
 let isGameStart = false;
 let isX = true;
 let move = document.getElementById("showMove");
+const animinationCon = document.querySelector(".lottie");
+
+//voices
+let click = new Audio("./gameSound/click12.aac");
+let startGame = new Audio("./gameSound/gamestart.mp3");
+let vic = new Audio("./gameSound/vicAud.mp3");
+let tie = new Audio("./gameSound/tie.mp3");
+
 //start game
 btn.addEventListener("click", function () {
+  startGame.play();
   isGameStart = true;
 });
 function clearGrid() {
@@ -17,15 +26,12 @@ function clearGrid() {
 function winnerAnnounce() {
   let winner = winnerConditions();
   if (winner == 1) {
-    setTimeout(() => {
-      alert("x is winner");
-      clearGrid();
-    }, 1000);
+    winnerGesture();
   } else if (winner == 2) {
-    setTimeout(() => {
-        alert("O is winner");
-        clearGrid();
-      }, 1000);
+    winnerGesture();
+  } else if (winner == 3) {
+    tie.play();
+    move.innerText = "game is draw";
   }
 }
 grid.addEventListener("click", function (event) {
@@ -35,6 +41,7 @@ grid.addEventListener("click", function (event) {
   let target = event.target;
   if (isX) {
     if (target.innerText == "") {
+      click.play();
       move.innerText = "Player O move";
 
       value = "X";
@@ -113,5 +120,35 @@ function winnerConditions() {
       cell[6].innerText == "O")
   ) {
     return 2;
+  } else if (
+    cell[0].innerText != "" &&
+    cell[1].innerText != "" &&
+    cell[2].innerText != "" &&
+    cell[3].innerText != "" &&
+    cell[4].innerText != "" &&
+    cell[5].innerText != "" &&
+    cell[6].innerText != "" &&
+    cell[7].innerText != "" &&
+    cell[8].innerText != ""
+  ) {
+    return 3;
   }
+}
+
+function winnerGesture() {
+  vic.play();
+  const container = document.querySelector(".lottie");
+  container.style.display = "block";
+  grid.style.display = "none";
+
+  const dotLottie = lottie.loadAnimation({
+    container: container,
+    autoplay: true,
+    loop: true,
+    renderer: "svg", // Use "svg" or "canvas" depending on your needs
+    path: "Animation - 1728459876176.json",
+  });
+  dotLottie.addEventListener("complete", function () {
+    container.style.display = "none";
+  });
 }
