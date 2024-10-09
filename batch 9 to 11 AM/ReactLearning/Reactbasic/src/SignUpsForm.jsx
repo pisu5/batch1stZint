@@ -25,7 +25,7 @@ const SignUpsForm = () => {
     setformdata({ name: " ", mail: " ", password: " " });
   };
   const showUsers = () => {
-    console.log("users"+formdata.name);
+    console.log("users" + formdata.name);
   };
   return (
     <>
