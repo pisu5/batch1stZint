@@ -15,4 +15,3 @@ var fg = 67; //  fg = undeifned
 console.log(gd); //
 var gd = 56; //gd = undifined
 */
-

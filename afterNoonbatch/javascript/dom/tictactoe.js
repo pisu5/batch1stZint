@@ -52,6 +52,7 @@ grid.addEventListener("click", function (event) {
     }
   } else {
     if (target.innerText == "") {
+      click.play();
       move.innerText = "Player X move";
 
       value = "O";
