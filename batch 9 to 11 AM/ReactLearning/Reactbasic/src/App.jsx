@@ -1,4 +1,4 @@
-import react from "react";
+import react, { Suspense, lazy } from "react";
 
 import Footer from "./Footer";
 import HomePage from "./HomePage";
@@ -14,12 +14,25 @@ import DarkLightMode from "./DarkLightMode";
 import Basic from "./tailwindMaterials/Basic";
 import Header from "./tailwindMaterials/Header";
 import CoinProvider from "./CoinProvider";
+import { ShimmerTable, ShimmerSectionHeader } from "shimmer-effects-react";
+import ScoreCard from "./ScoreCard";
 
 function App() {
+  const sc = lazy(() => import("./ScoreCard"));
   return (
     <>
       <Link to="/ScoreCard">ScoreCard</Link>
       <Link to="/CoinCollect">CoinCollector</Link>
+
+      <Suspense
+        fallback={
+          <div>
+            <ShimmerSectionHeader center={true} mode="dark" />
+          </div>
+        }
+      >
+       {sc}
+      </Suspense>
     </>
   );
 }
