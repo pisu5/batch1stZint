@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>My StopWatch</h1>
+    </div>
+
+    <div class="stopWatch">
+      <div class="hmSM">
+        <span id="ms">00</span>
+        <span id="second">00</span>
+        <span id="mnt">00</span>
+        <span id="hour">00</span>
+      </div>
+
+      <div class="btn">
+        <button id="start">Start Timer</button>
+        <button id="reset">Reset</button>
+        <button id="st">Stop</button>
+      </div>
+    </div>
+    <script>
+      let btnStart = document.querySelector("#start");
+      let btnReset = document.querySelector("#reset");
+      let stop = document.querySelector("#st");
+      let mS = 0;
+      let sec = 0;
+      let mnt = 0;
+      let hour = 0;
+      let timer = false;
+
+      btnStart.addEventListener("click", function () {
+        console.log("clicked");
+        timer = true;
+        stopWatch();
+      });
+      stop.addEventListener("click", function () {
+        timer = false;
+      });
+      btnReset.addEventListener("click", function () {
+        timer = false;
+        hour = 0;
+        sec = 0;
+        mS = 0;
+        mnt = 0;
+        document.querySelector("#hour").innerHTML = 00;
+        document.querySelector("#mnt").innerHTML = 00;
+        document.querySelector("#second").innerHTML = 00;
+        document.querySelector("#ms").innerHTML = 00;
+      });
+      function stopWatch() {
+        if (timer) {
+          mS++;
+
+          if (mS == 100) {
+            sec++;
+            mS = 0;
+          }
+          if (sec == 60) {
+            mnt++;
+            sec = 0;
+          }
+          if (mnt == 60) {
+            hour++;
+            mnt = 0;
+          }
+
+          let hs = hour;
+          let ss = sec;
+          let mntS = mnt;
+          let mss = mS;
+
+          if (hour < 10) {
+            hs = "0" + hour;
+          }
+          if (mnt < 10) {
+            mntS = "0" + mnt;
+          }
+          if (sec < 10) {
+            ss = "0" + sec;
+          }
+          if (mS < 10) {
+            mss = "0" + mS;
+          }
+
+          document.querySelector("#hour").innerHTML = hs;
+          document.querySelector("#mnt").innerHTML = mntS;
+          document.querySelector("#second").innerHTML = ss;
+          document.querySelector("#ms").innerHTML = mss;
+          setTimeout(stopWatch, 10);
+        }
+      }
+    </script>
+  </body>
+</html>
