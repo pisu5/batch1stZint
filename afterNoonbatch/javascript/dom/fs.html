@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Fee structure</h1>
+
+    <table border="2">
+      <thead>
+        <tr>
+          <th>Couse name</th>
+          <th>Duration</th>
+          <th>fee</th>
+        </tr>
+      </thead>
+
+      <tbody></tbody>
+    </table>
+    <input id="cn" type="text" />
+    <input id="duration" type="number" />
+    <input id="fee" type="number" />
+    <button>Add data</button>
+
+    <script>
+      let course = document.querySelector("#cn");
+      let dur = document.querySelector("#duration");
+      let fee = document.querySelector("#fee");
+      let tbody = document.querySelector("tbody");
+
+      let btn = document.querySelector("button");
+
+      btn.addEventListener("click", function () {
+        let tr = document.createElement("tr");
+        let tdC = document.createElement("td");
+        let durTd = document.createElement("td");
+        let feeTd = document.createElement("td");
+        tdC.innerText = course.value;
+        durTd.innerText = dur.value;
+        feeTd.innerText = fee.value;
+        tr.appendChild(tdC);
+        tr.appendChild(durTd);
+        tr.appendChild(feeTd);
+
+        tbody.appendChild(tr);
+      });
+    </script>
+  </body>
+</html>
