@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const names = [
+        "Ram",
+        "Shyam",
+        "Sheeta",
+        "Anjali",
+        "Reena",
+        "Teena",
+        "Sheema",
+      ];
+
+      names.map((value, index) => {
+        let spanIndex = document.createElement("span"); //create
+        let spanVal = document.createElement("span");
+        let div = document.createElement("div");
+        spanIndex.innerText = index;
+        spanVal.innerText = value;
+        div.appendChild(spanIndex);
+        div.appendChild(spanVal);
+        document.body.appendChild(div);
+      });
+    </script>
+  </body>
+</html>
