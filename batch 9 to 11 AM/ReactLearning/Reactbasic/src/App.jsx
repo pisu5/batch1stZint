@@ -16,6 +16,7 @@ import Header from "./tailwindMaterials/Header";
 import CoinProvider from "./CoinProvider";
 import { ShimmerTable, ShimmerSectionHeader } from "shimmer-effects-react";
 import ScoreCard from "./ScoreCard";
+import ToDoApp from "./ToDoApp";
 
 function App() {
   const sc = lazy(() => import("./ScoreCard"));
@@ -33,6 +34,7 @@ function App() {
       >
        {sc}
       </Suspense>
+      <ToDoApp/>
     </>
   );
 }

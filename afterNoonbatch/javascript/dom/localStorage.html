@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body.dark {
+        background-color: rgb(63, 62, 60);
+        color: aliceblue;
+      }
+      body.light {
+        background-color: antiquewhite;
+        color: rgb(57, 57, 250);
+      }
+      body.blue {
+        background-color: aquamarine;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" />
+    <h2>Select Theme</h2>
+    <select name="theme" id="theme">
+      <option value="dark">dark</option>
+      <option value="light">light</option>
+      <option value="blue">blue</option>
+    </select>
+    <button>Add value</button>
+    <h1></h1>
+
+    <script>
+      window.onload = () => {
+        let name = localStorage.getItem("name");
+        let theme = localStorage.getItem("theme");
+        document.body.className = theme;
+        console.log(name);
+        document.querySelector("h1").textContent = name;
+      };
+
+      document.querySelector("button").addEventListener("click", savedInLS);
+      function savedInLS() {
+        let input = document.querySelector("input").value;
+        let the = document.querySelector("select").value;
+        localStorage.setItem("theme", the);
+        localStorage.setItem("name", input);
+      }
+    </script>
+  </body>
+</html>
