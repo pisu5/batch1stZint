@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      canvas {
+        height: 400px;
+        width: 40%;
+        border: 2px solid crimson;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Signature Digitally</h1>
+
+    <canvas id="canva"></canvas>
+
+    <div class="btns">
+      <button onclick="printDocu()" id="print">Print</button>
+      <button onclick="clearBox()" id="clear">Clear</button>
+    </div>
+
+    <script>
+      let canva = document.getElementById("canva");
+      let ct = canva.getContext("2d");
+      let isDrawing = false;
+
+      //mousing method
+      canva.addEventListener("mousedown", startDraw);
+      canva.addEventListener("mouseup", stopDrawing);
+      canva.addEventListener("mousemove", draw);
+      //mobile
+      canva.addEventListener("touchstart", startDraw);
+      canva.addEventListener("touchend", stopDrawing);
+      canva.addEventListener("touchmove", draw);
+
+      function startDraw(e) {
+        isDrawing = true;
+        ct.beginPath(); //start from first line
+        ct.moveTo(e.clientX - canva.offsetLeft, e.clientY - canva.offsetTop);
+        e.preventDefault();
+      }
+      function stopDrawing() {
+        isDrawing = false;
+      }
+
+      function draw(e) {
+        if (!isDrawing) {
+          return;
+        }
+        ct.lineWidth = 2;
+        ct.lineCap = "round";
+        ct.strokeStyle = "#000";
+        ct.lineTo(e.clientX - canva.offsetLeft, e.clientY - canva.offsetTop);
+        ct.stroke();
+        e.preventDefault();
+      }
+      function clearBox() {
+        ct.clearRect(0, 0, canva.width, canva.height);
+      }
+      function printDocu() {
+        window.print();
+      }
+    </script>
+  </body>
+</html>

@@ -3,91 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Header Example</title>
+    <title>Digital Signature Pad</title>
     <style>
       body {
-        margin: 0;
         font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
       }
-      .advanced-button {
-        background-color: lightgreen;
-        border: none;
-        padding: 10px 20px;
+      #signature-pad {
+        border: 1px solid #000;
+        width: 400px;
+        height: 200px;
+        cursor: crosshair;
+      }
+      .buttons {
+        margin-top: 10px;
+      }
+      button {
+        margin: 5px;
+        padding: 10px;
         font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s, transform 0.3s;
-      }
-
-      .advanced-button:hover {
-        background-color: green;
-        transform: scale(1.1);
-      }
-
-      header {
-        background-color: white;
-        border-bottom: 2px solid blue;
-        padding: 10px 0;
-      }
-
-      .header-container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-        overflow: hidden;
-      }
-
-      .logo {
-        float: left;
-      }
-
-      .logo img {
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        vertical-align: middle;
-      }
-
-      .logo span {
-        font-weight: bold;
-        vertical-align: middle;
-        margin-left: 10px;
-      }
-
-      .nav-links {
-        float: right;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: black;
-        margin-left: 20px;
-        font-weight: bold;
-      }
-
-      .nav-links a:hover {
-        text-decoration: underline;
       }
     </style>
   </head>
   <body>
-    <header>
-      <div class="header-container">
-        <div class="logo">
-          <img
-            src="https://dopefolio.netlify.app/assets/png/john-doe.png"
-            alt="Profile Picture"
-          />
-          <span>JOHN DOE</span>
-        </div>
-        <nav class="nav-links">
-          <a href="#">HOME</a>
-          <a href="#">ABOUT</a>
-          <a href="#">PROJECTS</a>
-          <a href="#">CONTACT</a>
-        </nav>
-      </div>
-    </header>
+    <h1>Digital Signature Pad</h1>
+    <canvas id="signature-pad"></canvas>
+    <div class="buttons">
+      <button onclick="clearPad()">Clear</button>
+      <button onclick="printDocument()">Print</button>
+    </div>
 
-    <button class="advanced-button">Advanced version</button>
+    <script>
+      const canvas = document.getElementById("signature-pad");
+      const ctx = canvas.getContext("2d");
+      let isDrawing = false;
+
+      canvas.addEventListener("mousedown", startDrawing);
+      canvas.addEventListener("mouseup", stopDrawing);
+      canvas.addEventListener("mousemove", draw);
+      canvas.addEventListener("touchstart", startDrawing);
+      canvas.addEventListener("touchend", stopDrawing);
+      canvas.addEventListener("touchmove", draw);
+
+      function startDrawing(e) {
+        isDrawing = true;
+        ctx.beginPath();
+        ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        e.preventDefault();
+      }
+
+      function stopDrawing() {
+        isDrawing = false;
+      }
+
+      function draw(e) {
+        if (!isDrawing) return;
+        ctx.lineWidth = 2;
+        ctx.lineCap = "round";
+        ctx.strokeStyle = "#000";
+        ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        ctx.stroke();
+        e.preventDefault();
+      }
+
+      function clearPad() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+
+      function printDocument() {
+        window.print();
+      }
+    </script>
   </body>
 </html>
