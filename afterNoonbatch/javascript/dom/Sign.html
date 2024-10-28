@@ -3,64 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Digital Signature Pad</title>
     <style>
-      canvas {
-        height: 400px;
-        width: 40%;
-        border: 2px solid crimson;
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+      }
+      #canva {
+        border: 1px solid #000;
+        width: 400px;
+        height: 200px;
+        cursor: crosshair;
+      }
+      .buttons {
+        margin-top: 10px;
+      }
+      button {
+        margin: 5px;
+        padding: 10px;
+        font-size: 16px;
       }
     </style>
   </head>
   <body>
-    <h1>Signature Digitally</h1>
-
+    <h1>Digital Signature</h1>
     <canvas id="canva"></canvas>
-
-    <div class="btns">
-      <button onclick="printDocu()" id="print">Print</button>
-      <button onclick="clearBox()" id="clear">Clear</button>
+    <div class="buttons">
+      <button onclick="clearPad()">Clear</button>
+      <button onclick="printDocument()">Print</button>
     </div>
 
     <script>
-      let canva = document.getElementById("canva");
-      let ct = canva.getContext("2d");
+      const canvas = document.getElementById("canva");
+      const ct = canvas.getContext("2d");
       let isDrawing = false;
 
-      //mousing method
-      canva.addEventListener("mousedown", startDraw);
-      canva.addEventListener("mouseup", stopDrawing);
-      canva.addEventListener("mousemove", draw);
-      //mobile
-      canva.addEventListener("touchstart", startDraw);
-      canva.addEventListener("touchend", stopDrawing);
-      canva.addEventListener("touchmove", draw);
+      canvas.addEventListener("mousedown", startDrawing);
+      canvas.addEventListener("mouseup", stopDrawing);
+      canvas.addEventListener("mousemove", draw);
+      canvas.addEventListener("touchstart", startDrawing);
+      canvas.addEventListener("touchend", stopDrawing);
+      canvas.addEventListener("touchmove", draw);
 
-      function startDraw(e) {
+      function startDrawing(e) {
         isDrawing = true;
-        ct.beginPath(); //start from first line
-        ct.moveTo(e.clientX - canva.offsetLeft, e.clientY - canva.offsetTop);
+        ct.beginPath();
+        ct.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
         e.preventDefault();
       }
+
       function stopDrawing() {
         isDrawing = false;
       }
 
       function draw(e) {
-        if (!isDrawing) {
-          return;
-        }
+        if (!isDrawing) return;
         ct.lineWidth = 2;
         ct.lineCap = "round";
         ct.strokeStyle = "#000";
-        ct.lineTo(e.clientX - canva.offsetLeft, e.clientY - canva.offsetTop);
+        ct.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
         ct.stroke();
         e.preventDefault();
       }
-      function clearBox() {
-        ct.clearRect(0, 0, canva.width, canva.height);
+
+      function clearPad() {
+        ct.clearRect(0, 0, canvas.width, canvas.height);
       }
-      function printDocu() {
+
+      function printDocument() {
         window.print();
       }
     </script>
