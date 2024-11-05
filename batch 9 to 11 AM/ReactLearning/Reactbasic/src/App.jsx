@@ -17,24 +17,15 @@ import CoinProvider from "./CoinProvider";
 import { ShimmerTable, ShimmerSectionHeader } from "shimmer-effects-react";
 import ScoreCard from "./ScoreCard";
 import ToDoApp from "./ToDoApp";
+import { Stroy } from "./Stroy";
+import Accordion from "./Accordion";
 
 function App() {
   const sc = lazy(() => import("./ScoreCard"));
   return (
     <>
-      <Link to="/ScoreCard">ScoreCard</Link>
-      <Link to="/CoinCollect">CoinCollector</Link>
-
-      <Suspense
-        fallback={
-          <div>
-            <ShimmerSectionHeader center={true} mode="dark" />
-          </div>
-        }
-      >
-       {sc}
-      </Suspense>
-      <ToDoApp/>
+    
+     
     </>
   );
 }

@@ -50,29 +50,130 @@ public class Arrays {
          * System.out.println(arr2[i]);
          * }
          * 
-         */
-        int[] arr2 = { 1, 2, 4, 2, 2, 7, 0, 2, -45 };
-        int firstIndex = -1;
-        int lastIndex = -1;
-        int ele = 2;
-        boolean isFounf = true;
+         * //que 13
+         * int[] arr2 = { 1, 2, 4, 2, 2, 7, 0, 2, -45 };
+         * int firstIndex = -1;
+         * int lastIndex = -1;
+         * int ele = 2;
+         * boolean isFounf = true;
+         * for (int i = 0; i < arr2.length; i++) {
+         * 
+         * if (isFounf) {
+         * if (ele == arr2[i]) {
+         * firstIndex = i;
+         * isFounf = false;
+         * }
+         * 
+         * } else if (ele == arr2[i]) {
+         * System.out.println("prkfv");
+         * lastIndex = i;
+         * 
+         * }
+         * 
+         * }
+         * System.out.println(firstIndex);
+         * System.out.println(lastIndex);
+         * // que 16
+         * 
+         * int[] arr2 = { 1, 2, 4, 5, 6, 7, 0, -45 };
+         * 
+         * int[] res = new int[arr2.length];
+         * int k = 2;
+         * for (int i = 0; i < arr2.length; i++) {
+         * if (arr2[i] != k) {
+         * res[i] = arr2[i];
+         * 
+         * }
+         * }
+         * 
+         * for (int i = 0; i < res.length; i++) {
+         * System.out.println(res[i]);
+         * // que 18
+         * int[] arr2 = { 1, 2, 4, 5, 6, 7, 0, -45 };
+         * int max = Integer.MIN_VALUE;
+         * int min = Integer.MAX_VALUE;
+         * for (int i = 0; i < arr2.length; i++) {
+         * if (arr2[i] > max) {
+         * max = arr2[i];
+         * } else if (arr2[i] < min) {
+         * min = arr2[i];
+         * }
+         * }
+         * System.err.println("Max element is" + " " + max + " " + "and Min element is"
+         * + " " + min);
+         * }
+         * // que 19
+         * 
+         * int val = 8;
+         * int count = 0;
+         * 
+         * int[] arr2 = { 1, 2, 4, 5, 6, 7, 0, -45 };
+         * for (int i = 0; i < arr2.length; i++) {
+         * for (int j = i + 1; j < arr2.length; j++) {
+         * if (arr2[i] + arr2[j] == val) {
+         * count++;
+         * 
+         * }
+         * }
+         * 
+         * }
+         * System.out.println(count);
+         * // que 20
+        int[] arr2 = { 1, 2, 4, 5, 6, 7, 0, -45 };
+        int max = Integer.MIN_VALUE;
+        int smax = Integer.MIN_VALUE;
         for (int i = 0; i < arr2.length; i++) {
-            
-            if (isFounf) {
-                if (ele == arr2[i]) {
-                    firstIndex = i;
-                    isFounf = false;
-                }
+            if (arr2[i] > max) {
+                smax = max;
+                max = arr2[i];
 
-            } else if (ele == arr2[i]) {
-                System.out.println("prkfv");
-                lastIndex = i;
-
+            } else if (arr2[i] > smax && arr2[i] != max) {
+                smax = arr2[i];
             }
 
         }
-        System.out.println(firstIndex);
-        System.out.println(lastIndex);
-    }
+        System.out.println(smax);
+         int[] arr2 = { 1, 2, 4, 5, 6, 7, 0, -45 };
+        int countEven =0;
+        for(int i =0;i<arr2.length;i++){
+            if(arr2[i]%2==0){
+                countEven++;
+               // count = count+arr2[i];
+            }
 
+        }
+        System.out.println(countEven);
+         int[] arr2 = { 1, 2, 4, 5, 6, 7, 0, -45 };
+        int ele = -45;
+        int index = -1;
+       
+        for(int i =0;i<arr2.length;i++){
+            if(arr2[i]==ele){
+                index = i;
+                break;
+               
+            }
+
+        }
+        System.out.println(index);
+         */
+       int []asc ={2,3,5};
+       boolean isAsc = true;
+       for(int i =0;i<asc.length-1;i++){
+        if(asc[i]>asc[i+1]){
+            isAsc = false;
+            break;
+            
+            
+        }
+       }
+       if(isAsc){
+        System.out.println("Arrays is sort");
+       }else{
+        System.out.println("Array is not sort");
+       }
+
+        
+       
+    }
 }
