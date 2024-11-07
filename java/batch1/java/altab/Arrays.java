@@ -119,61 +119,81 @@ public class Arrays {
          * }
          * System.out.println(count);
          * // que 20
-        int[] arr2 = { 1, 2, 4, 5, 6, 7, 0, -45 };
-        int max = Integer.MIN_VALUE;
-        int smax = Integer.MIN_VALUE;
-        for (int i = 0; i < arr2.length; i++) {
-            if (arr2[i] > max) {
-                smax = max;
-                max = arr2[i];
-
-            } else if (arr2[i] > smax && arr2[i] != max) {
-                smax = arr2[i];
-            }
-
-        }
-        System.out.println(smax);
-         int[] arr2 = { 1, 2, 4, 5, 6, 7, 0, -45 };
-        int countEven =0;
-        for(int i =0;i<arr2.length;i++){
-            if(arr2[i]%2==0){
-                countEven++;
-               // count = count+arr2[i];
-            }
-
-        }
-        System.out.println(countEven);
-         int[] arr2 = { 1, 2, 4, 5, 6, 7, 0, -45 };
-        int ele = -45;
-        int index = -1;
-       
-        for(int i =0;i<arr2.length;i++){
-            if(arr2[i]==ele){
-                index = i;
-                break;
-               
-            }
-
-        }
-        System.out.println(index);
+         * int[] arr2 = { 1, 2, 4, 5, 6, 7, 0, -45 };
+         * int max = Integer.MIN_VALUE;
+         * int smax = Integer.MIN_VALUE;
+         * for (int i = 0; i < arr2.length; i++) {
+         * if (arr2[i] > max) {
+         * smax = max;
+         * max = arr2[i];
+         * 
+         * } else if (arr2[i] > smax && arr2[i] != max) {
+         * smax = arr2[i];
+         * }
+         * 
+         * }
+         * System.out.println(smax);
+         * int[] arr2 = { 1, 2, 4, 5, 6, 7, 0, -45 };
+         * int countEven =0;
+         * for(int i =0;i<arr2.length;i++){
+         * if(arr2[i]%2==0){
+         * countEven++;
+         * // count = count+arr2[i];
+         * }
+         * 
+         * }
+         * System.out.println(countEven);
+         * int[] arr2 = { 1, 2, 4, 5, 6, 7, 0, -45 };
+         * int ele = -45;
+         * int index = -1;
+         * 
+         * for(int i =0;i<arr2.length;i++){
+         * if(arr2[i]==ele){
+         * index = i;
+         * break;
+         * 
+         * }
+         * 
+         * }
+         * System.out.println(index);
+         * int []asc ={2,3,5};
+         * boolean isAsc = true;
+         * for(int i =0;i<asc.length-1;i++){
+         * if(asc[i]>asc[i+1]){
+         * isAsc = false;
+         * break;
+         * 
+         * 
+         * }
+         * }
+         * if(isAsc){
+         * System.out.println("Arrays is sort");
+         * }else{
+         * System.out.println("Array is not sort");
+         * }
+         * 
+         * 
          */
-       int []asc ={2,3,5};
-       boolean isAsc = true;
-       for(int i =0;i<asc.length-1;i++){
-        if(asc[i]>asc[i+1]){
-            isAsc = false;
-            break;
-            
-            
-        }
-       }
-       if(isAsc){
-        System.out.println("Arrays is sort");
-       }else{
-        System.out.println("Array is not sort");
-       }
+        int g[] = { 1, 2, 3, 4, 5, 6, 8 };
 
-        
-       
+        boolean isRange = true;
+        int missing = 0;
+        for (int i = 0; i < g.length - 1; i++) {
+
+            int curr = g[i] + 1;
+            int nextNum = g[i + 1];
+            if (curr != nextNum) {
+                isRange = false;
+                missing = curr;
+                break;
+
+            }
+        }
+        if (isRange) {
+            System.out.println("Arrays is in range");
+        } else {
+            System.out.println("not " + " " + missing);
+        }
+
     }
 }
