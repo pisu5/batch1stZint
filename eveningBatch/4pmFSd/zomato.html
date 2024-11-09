@@ -40,11 +40,9 @@
         margin: 20px;
         column-gap: 10px;
         color: white;
-        position: relative;
-        left: 70%;
       }
       .mid-part {
-        left: 350px;
+       margin-left: 200px;
         position: absolute;
         top: 30%;
       }
@@ -65,7 +63,9 @@
         word-spacing: 0px 36px;
       }
       .child-input {
-       
+        column-gap: 10px;
+        display: flex;
+        align-items: center;
         border-radius: 10px;
         height: 50px;
         width: 800px;
@@ -75,10 +75,37 @@
         margin-top: 10px;
         margin: 20px;
       }
-      .child-input   input{
+      .child-input input {
         border: none;
         outline: none;
+      }
+      .icons3 {
+        display: flex;
+        column-gap: 10px;
+        color: rgba(128, 128, 128, 0.595);
+      }
 
+      .bar-cards {
+      
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        column-gap: 30px;
+      }
+      .card1 {
+        border-radius: 10px;
+      }
+      .card1-img img {
+        border-radius: 10px;
+      }
+
+      .card1-text {
+        height: 200px;
+        width: 550px;
+        background-color: aliceblue;
+        position: absolute;
+        top: 0;
+        margin-top: 55%;
       }
     </style>
   </head>
@@ -111,17 +138,53 @@
         </div>
         <div class="mid-p">Lorem ipsum dolor sit amet consectetur dicta.</div>
         <div class="input">
-            <div class="main-input">
-                <div class="child-input">
-                    <span>
-                      <i class="fa-solid fa-location-dot" style="color: #ff242f"></i>
-                    </span>
-                    <input type="text" placeholder="Abu Dabi" />
-                  </div>
+          <div class="main-input">
+            <div class="child-input">
+              <span>
+                <i class="fa-solid fa-location-dot" style="color: #ff242f"></i>
+              </span>
+              <input type="text" placeholder="Abu Dabi" />
+              <div class="icons3">
+                <i class="fa-solid fa-angle-down"></i>
+                <i class="fa-solid fa-grip-lines-vertical"></i>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                  type="text"
+                  placeholder="Search for Reastaurant,cuisne or dish"
+                />
+              </div>
             </div>
-         
+          </div>
         </div>
       </div>
     </header>
+    <div class="bar-cards">
+      <div class="card1">
+        <div class="card1-img">
+          <img
+            src="https://b.zmtcdn.com/webFrontend/d026b357feb0d63c997549f6398da8cc1647364915.jpeg?output-format=webp&fit=around|402:360&crop=402:360;*,*"
+            alt=""
+          />
+        </div>
+        <div class="card1-text">
+          <h3>Dining</h3>
+          <p>View the city's faviourite dining venues</p>
+        </div>
+      </div>
+      <div class="card1">
+        <div class="card1-img">
+          <img
+            src="https://b.zmtcdn.com/webFrontend/d9d80ef91cb552e3fdfadb3d4f4379761647365057.jpeg?output-format=webp&fit=around|402:360&crop=402:360;*,*"
+            alt=""
+          />
+        </div>
+        <div class="card1-text">
+          <h3>Dining</h3>
+          <p>View the city's faviourite dining venues</p>
+        </div>
+      </div>
+    </div>
+     
+   
   </body>
 </html>
