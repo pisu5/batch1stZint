@@ -1,11 +1,12 @@
 import "./App.css";
 import Check from "./Check";
+import List from "./List";
 
 function App() {
   return (
     <>
-      <h1>Successfully installed out react app</h1>
-      <Check intro="I am from check but app jsx" param=";ljwdhefhe3fqw" />
+     
+      <List/>
     </>
   );
 }
