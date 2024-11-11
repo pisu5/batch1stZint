@@ -40,3 +40,34 @@
 .read-the-docs {
   color: #888;
 }
+img{
+  width: 100px;
+}
+
+.phone-list{
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 2px;
+}
+
+.phone-head{
+  display: flex;
+  column-gap: 70px;
+  justify-content: center;
+  align-items: center;
+}
+button{
+  background-color: blue;
+  color: white;
+  height: 40px;
+  width: 100px;
+}
+.list{
+  display: flex;
+  column-gap: 60px;
+}
+.phones{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
