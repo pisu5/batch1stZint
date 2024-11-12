@@ -1,0 +1,12 @@
+.lightMode {
+  color: black;
+  background-color: aliceblue;
+  box-sizing: border-box;
+}
+.darkMode {
+  color: white;
+  background-color: #333;
+}
+h3{
+    cursor: pointer;
+}
