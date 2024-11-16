@@ -18,7 +18,6 @@ export const HooksUse = () => {
         <h2>{count}</h2>
 
         <h3 onClick={handleMode}>{isDark ? "Dark mode" : "Light mode"}</h3>
-       
 
         <button onClick={handleClick}>Count</button>
       </div>
