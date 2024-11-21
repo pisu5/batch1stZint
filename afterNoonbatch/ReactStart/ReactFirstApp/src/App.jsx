@@ -4,6 +4,10 @@ import { Form } from "./Form";
 import { HooksUse } from "./HooksUse";
 import List from "./List";
 import { Link } from "react-router-dom";
+import { Routers } from "./Routers";
+import ProductList from "./ProductList";
+import CM from "./CM";
+import { Footer } from "./Footer";
 
 function App() {
   const Phonedata = [
@@ -112,8 +116,7 @@ function App() {
       <List Phonedata={Phonedata} />
       <List Phonedata={Phonedata2} /> */}
 
-      <Form/>
-     
+   <Footer/>
     </>
   );
 }
