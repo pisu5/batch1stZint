@@ -85,19 +85,89 @@ public class StringsQue {
          * }
          * System.out.println(ans);
          * 
+         * String dup = "rrrrr ffffggggsss";
+         * String ans = ""+dup.charAt(0);
+         * for (int i = 1; i < dup.length(); i++) {
+         * char pre = dup.charAt(i - 1);
+         * char post = dup.charAt(i);
+         * if (pre != post) {
+         * ans += post;
          * 
+         * }
+         * }
+         * System.out.println(ans);
+         * // que 9
+         * 
+         * String str = "mmcfffhhhhhyyyyzzz";
+         * int[] arr = new int[26];
+         * for (int i = 0; i < str.length(); i++) {
+         * char ch = str.charAt(i);
+         * if (ch >= 'a' && ch <= 'z') {
+         * int idx = (int) (ch - 'a'); // ascii value
+         * arr[idx] = arr[idx] + 1;
+         * } else if (ch >= 'A' && ch <= 'Z') {
+         * int idx = (int) (ch - 'A'); // ascii value
+         * arr[idx] = arr[idx] + 1;
+         * 
+         * }
+         * }
+         * 
+         * int max = 0;
+         * int smax = 0;
+         * for(int i =0;i<26;i++){
+         * if(arr[max]<arr[i]){
+         * smax = max;
+         * max = i;
+         * }else if(arr[smax]<arr[i]){
+         * smax = i;
+         * }
+         * 
+         * }
+         * char c = (char)('a'+smax);
+         * System.out.println(c);
+         * //que 11
+         * String f = "123243556";
+         * boolean isDigit =true;
+         * for(int i =0;i<f.length();i++){
+         * char h = f.charAt(i);
+         * if(!(h>='0'&&h<='9')){
+         * isDigit = false;
+         * break;
+         * 
+         * 
+         * }
+         * }
+         * 
+         * if(isDigit){
+         * System.out.println("Yes");
+         * }else{
+         * System.out.println("No");
+         * }
          */
-
-        String dup = "rrrrr ffffggggsss";
-        String ans = ""+dup.charAt(0);
-        for (int i = 1; i < dup.length(); i++) {
-            char pre = dup.charAt(i - 1);
-            char post = dup.charAt(i);
-            if (pre != post) {
-                ans += post;
-
-            }
+        // que 12
+        String s = "lmmfwmdm klhlh jhu ";
+        String ans = "";
+        String[] arr = s.split(" ");
+        String firstWord = arr[0];
+        char fc = firstWord.charAt(0);
+        if (fc >= 'A' && fc <= 'Z') {
+            fc = (char) ((fc - 'A' + 'a'));
+            firstWord = fc + firstWord.substring(1);
         }
+        ans += firstWord;
+
+        for (int i = 1; i < arr.length; i++) {
+            String temp = arr[i];
+            char cg = temp.charAt(0);
+
+            if (cg >= 'a' && cg <= 'z') {
+                cg = (char) (cg - 'a' + 'A');
+                temp = cg + temp.substring(1);
+            }
+            ans += temp;
+
+        }
+
         System.out.println(ans);
 
     }

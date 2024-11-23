@@ -84,13 +84,47 @@
         background-color: cyan;
       }
 
+     
+        */
+
       .parent {
+        visibility: hidden;
+
         gap: 10px;
         display: grid;
         grid-template-rows: repeat(3, 1fr);
         grid-template-columns: repeat(3, 1fr);
       }
-        */
+      .child {
+        visibility: hidden;
+
+        height: 100px;
+        width: 100px;
+        background-color: cyan;
+      }
+      .d {
+        display: flex;
+        column-gap: 10px;
+      }
+      .c {
+        height: 100px;
+        background-color: cadetblue;
+
+        width: 100px;
+      }
+
+      @media screen and (max-width: 600px) {
+        .child {
+          visibility: visible;
+        }
+        .parent {
+          visibility: visible;
+        }
+        .d {
+          flex-direction: column;
+          row-gap: 10px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -123,5 +157,12 @@
     <div class="second"></div>
 
     <div class="third"></div>-->
+    <div class="d">
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+    </div>
   </body>
 </html>

@@ -8,6 +8,8 @@ import { Routers } from "./Routers";
 import ProductList from "./ProductList";
 import CM from "./CM";
 import { Footer } from "./Footer";
+import { UseStateHook } from "./UseStateHook";
+import Counter from "./React-Redux/Counter";
 
 function App() {
   const Phonedata = [
@@ -112,11 +114,11 @@ function App() {
   ];
   return (
     <>
-    {/* <Link to="smartPhones">View Smart Phones</Link>
+      {/* <Link to="smartPhones">View Smart Phones</Link>
       <List Phonedata={Phonedata} />
       <List Phonedata={Phonedata2} /> */}
 
-   <Footer/>
+      <Counter />
     </>
   );
 }
